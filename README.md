@@ -24,7 +24,7 @@ Calendário:
 Storing:
 • Medical Appointments;
 • Eating (Diet and Eating Diary);
-• Walk (Separated by Day and Time);
+• Walk  (Separated by Day and Time);
 • 
 •
 
@@ -42,6 +42,14 @@ Calendar:
 *If you have ideas for releases in the future, it is a good idea to list them in the README.*
 
 ## Contribuição | Contributing
+
+## Autores e Reconhecimentos | Authors and Acknowledgment
+Davi Maurício
+Isabela Spinelli
+Marina Frias
+Maria Luisa
+Nicolas Sena
+Virna Amaral
 
 ## License
 
