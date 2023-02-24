@@ -65,15 +65,15 @@ Calendar:
 
 <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/><a href="https://github.com/DaviMauricio"> Davi Maurício </a>
 
-<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/><a href=""> Isabela Spinelli
+<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/><a href="https://github.com/bela975"> Isabela Spinelli
 
 <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/><a href="https://github.com/MarinaFFSC"> Marina Frias
 
 <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/><a href="https://github.com/MaluArr"> Maria Luisa
 
-<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/><a href=""> Nicolas Sena
+<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/><a href="https://github.com/NicolasSenna"> Nicolas Sena
 
-<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/><a href=""> Virna Amaral
+<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/><a href="https://github.com/virnaamaral"> Virna Amaral
 
 ## License
 
