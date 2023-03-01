@@ -1,5 +1,4 @@
 # PETracker
-*nome do grupo*
 
 ## Descrição | Description 
 Aplicativo que tem como objetivo tornar mais fácil o cuidado com o bem estar dos nossos amiguinhos pets!
