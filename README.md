@@ -33,7 +33,7 @@ Calendário:
   • Consultas Médicas;
   
   • Passeios.
-  
+<br>
 Retains:
 
 • Medical Appointment's Data;
@@ -56,39 +56,47 @@ Calendar:
   
   • Walks.
 
-## Instalação | Installation
-
-## Suporte | Support
-
 ## Roadmap
-*If you have ideas for releases in the future, it is a good idea to list them in the README.*
+Implementações Futuras:
+
+• Salvar na nuvem para ser acessável por qualquer dispositivo;
+
+• Personalização da interface pelo usuário (Cor de Background, foto de perfil do user e de seus pets);
+
+• Atrelar mais de um pet ao perfil;
+
+• Permitir o usuário fazer download das fotos/vídeos upados.
+
+Future Implementations:
+
+• Save data in cloud, being able to acess using any device;
+
+• Customizable user interface (Background Color, user's and pet's profile pictures);
+
+• Attach more pets to a profile;
+
+• Allow user to download updated pictures/videos.
 
 ## Contribuição | Contributing
 ![Snake animation](https://github.com/bela975/PETracker/blob/output/github-contribution-grid-snake.svg)
 
+## Suporte | Support
+*Em caso de dúvidas, entre em contato com nossos autores via Github ou Slack!*
+
+*If you need any help, you can text us using Github or Slack*
 ## Autores e Reconhecimentos | Authors and Acknowledgment
 
-<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/><a href="https://github.com/DaviMauricio"> Davi Maurício </a>
+<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/> <img src="https://cdn-icons-png.flaticon.com/512/3800/3800024.png" alt="img slack" href="https://github.com/DaviMauricio"  height="16px" width="16px"/> <a href="https://github.com/DaviMauricio"> Davi Maurício </a>
 
-<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/><a href="https://github.com/bela975"> Isabela Spinelli
+<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/> <img src="https://cdn-icons-png.flaticon.com/512/3800/3800024.png" alt="img slack" href="https://github.com/DaviMauricio"  height="16px" width="16px"/><a href="https://github.com/bela975"> Isabela Spinelli
 
-<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/><a href="https://github.com/MarinaFFSC"> Marina Frias
+<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/> <img src="https://cdn-icons-png.flaticon.com/512/3800/3800024.png" alt="img slack" href="https://github.com/DaviMauricio"  height="16px" width="16px"/><a href="https://github.com/MarinaFFSC"> Marina Frias
 
-<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/><a href="https://github.com/MaluArr"> Maria Luisa
+<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/> <img src="https://cdn-icons-png.flaticon.com/512/3800/3800024.png" alt="img slack" href="https://github.com/DaviMauricio"  height="16px" width="16px"/><a href="https://github.com/MaluArr"> Maria Luisa
 
-<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/><a href="https://github.com/NicolasSenna"> Nicolas Sena
+<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/> <img src="https://cdn-icons-png.flaticon.com/512/3800/3800024.png" alt="img slack" href="https://github.com/DaviMauricio"  height="16px" width="16px"/><a href="https://github.com/NicolasSenna"> Nicolas Sena
 
-<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/><a href="https://github.com/virnaamaral"> Virna Amaral
+<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/> <img src="https://cdn-icons-png.flaticon.com/512/3800/3800024.png" alt="img slack" href="https://github.com/DaviMauricio"  height="16px" width="16px"/><a href="https://github.com/virnaamaral"> Virna Amaral
 
 ## Licença | License
-
-Salvar na nuvem para ser acessavel por qualquer dispositivo 
-
-  Personalização da interface pelo usuario
-
-  Background color, profile picture 
-Guardar arquivos de doencas e coisas ja no app(galeria) 
-Compartilhavel com demais membros da casa
-(Tem que ser um link modificavel por x y e z pessoas) 
-
-Deve ser possivel ter mais de um pet atrelado a um perfil familiar 
+MIT
