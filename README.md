@@ -78,9 +78,6 @@ Future Implementations:
 
 • Allow user to download updated pictures/videos.
 
-## Contribuição | Contributing
-![Snake animation](https://github.com/bela975/PETracker/blob/output/github-contribution-grid-snake.svg)
-
 ## Suporte | Support
 *Em caso de dúvidas, entre em contato com nossos autores via Github ou Slack!*
 
