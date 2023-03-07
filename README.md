@@ -29,25 +29,25 @@ Calendário:
   
   • Passeios.
   
-Storing:
+Retains:
 
-• Medical Appointments;
+• Medical Appointment's Data;
 
 • Eating (Diet and Eating Diary);
 
-• Walk  (Separated by Day and Time);
+• Walking Data (Organized by Day and Time);
 
-• 
+• Gut Health;
 
-•
+• Attach Pictures.
 
 Calendar:
 
 • Allow to register events such as:
 
-  • 
+  • Pet Dates;
   
-  • 
+  • Medical Appointments;
   
   • Walks.
 
@@ -74,11 +74,13 @@ Calendar:
 
 <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/><a href="https://github.com/virnaamaral"> Virna Amaral
 
-## License
+## Licença | License
 
 Salvar na nuvem para ser acessavel por qualquer dispositivo 
-Personalização da interface pelo usuario
-Background color, profile picture 
+
+  Personalização da interface pelo usuario
+
+  Background color, profile picture 
 Guardar arquivos de doencas e coisas ja no app(galeria) 
 Compartilhavel com demais membros da casa
 (Tem que ser um link modificavel por x y e z pessoas) 
