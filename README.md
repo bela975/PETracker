@@ -64,7 +64,7 @@ Calendar:
 *If you have ideas for releases in the future, it is a good idea to list them in the README.*
 
 ## Contribuição | Contributing
-![Snake animation](https://github.com/DaviMauricio/DaviMauricio/blob/output/github-contribution-grid-snake.svg)
+![Snake animation](https://github.com/bela975/PETracker/blob/output/github-contribution-grid-snake.svg)
 
 ## Autores e Reconhecimentos | Authors and Acknowledgment
 
