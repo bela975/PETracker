@@ -84,17 +84,17 @@ Future Implementations:
 *If you need any help, you can text us using Github!*
 ## Autores e Reconhecimentos | Authors and Acknowledgment
 
-<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/> <img src="https://cdn-icons-png.flaticon.com/512/3800/3800024.png" alt="img slack" href="https://github.com/DaviMauricio"  height="16px" width="16px"/> <a href="https://github.com/DaviMauricio"> Davi Maurício </a>
+<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/> <a href="https://github.com/DaviMauricio"> Davi Maurício </a>
 
-<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/> <img src="https://cdn-icons-png.flaticon.com/512/3800/3800024.png" alt="img slack" href="https://github.com/DaviMauricio"  height="16px" width="16px"/><a href="https://github.com/bela975"> Isabela Spinelli
+<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/> <a href="https://github.com/bela975"> Isabela Spinelli
 
 <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/> <a href="https://github.com/MarinaFFSC"> Marina Frias
 
-<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/> <img src="https://cdn-icons-png.flaticon.com/512/3800/3800024.png" alt="img slack" href="https://github.com/DaviMauricio"  height="16px" width="16px"/><a href="https://github.com/MaluArr"> Maria Luisa
+<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/> <a href="https://github.com/MaluArr"> Maria Luisa
 
-<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/> <img src="https://cdn-icons-png.flaticon.com/512/3800/3800024.png" alt="img slack" href="https://github.com/DaviMauricio"  height="16px" width="16px"/><a href="https://github.com/NicolasSenna"> Nicolas Sena
+<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/> <a href="https://github.com/NicolasSenna"> Nicolas Sena
 
-<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/> <img src="https://cdn-icons-png.flaticon.com/512/3800/3800024.png" alt="img slack" href="https://github.com/DaviMauricio"  height="16px" width="16px"/><a href="https://github.com/virnaamaral"> Virna Amaral
+<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/> <a href="https://github.com/virnaamaral"> Virna Amaral
 
 ## Licença | License
 MIT
