@@ -1,4 +1,4 @@
-<img src="https://grupofdsapp.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10401?size=xxlarge" alt="logo PEtracker"   height="150px" width="150px"/> <div align="center">  <strong> PETracker </strong> </div>
+<img src="https://grupofdsapp.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10401?size=xxlarge" alt="logo PEtracker"   height="150px" width="150px"/> <div align="center">  <strong> <h1> PETracker </h1> </strong> </div>
 
 ## Descrição | Description 
 Aplicativo que tem como objetivo tornar mais fácil o cuidado com o bem estar dos nossos amiguinhos pets!
