@@ -33,7 +33,8 @@ Calendário:
   • Consultas Médicas;
   
   • Passeios.
-<br>
+
+
 Retains:
 
 • Medical Appointment's Data;
