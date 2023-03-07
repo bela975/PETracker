@@ -1,4 +1,9 @@
-<img src="https://grupofdsapp.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10401?size=xxlarge" alt="logo PEtracker"   height="150px" width="150px"/> <div align="center">  <strong> <h1> PETracker </h1> </strong> </div>
+<div style="display: inline-block">
+<img src="https://grupofdsapp.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10401?size=xxlarge" alt="logo PEtracker"   height="150px" width="150px"/>
+
+<div align="center">  <strong> <h1> PETracker </h1> </strong> </div>
+  
+</div>
 
 ## Descrição | Description 
 Aplicativo que tem como objetivo tornar mais fácil o cuidado com o bem estar dos nossos amiguinhos pets!
@@ -59,6 +64,7 @@ Calendar:
 *If you have ideas for releases in the future, it is a good idea to list them in the README.*
 
 ## Contribuição | Contributing
+![Snake animation](https://github.com/DaviMauricio/DaviMauricio/blob/output/github-contribution-grid-snake.svg)
 
 ## Autores e Reconhecimentos | Authors and Acknowledgment
 
