@@ -14,69 +14,69 @@ Web app that strives to make taking care of our pet friends easier!
 
 Armazenar:
 
-• Consultas Médicas; 
+* Consultas Médicas; 
 
-• Alimentação (Dieta e Diário Alimentar); 
+* Alimentação (Dieta e Diário Alimentar); 
 
-• Quantidade de Passeios (Separado por Dia e Horário);
+* Quantidade de Passeios (Separado por Dia e Horário);
 
-• Saúde Intestinal;
+* Saúde Intestinal;
 
-• Anexar Fotos.
+* Anexar Fotos.
 
 Calendário:
 
-• Permitir registro de eventos como:
+* Permitir registro de eventos como:
 
-  • Encontros Pet;
+  - Encontros Pet;
   
-  • Consultas Médicas;
+  - Consultas Médicas;
   
-  • Passeios.
+  - Passeios.
 
 
 Retains:
 
-• Medical Appointment's Data;
+* Medical Appointment's Data;
 
-• Eating (Diet and Eating Diary);
+* Eating (Diet and Eating Diary);
 
-• Walking Data (Organized by Day and Time);
+* Walking Data (Organized by Day and Time);
 
-• Digestive Health;
+* Digestive Health;
 
-• Attach Pictures.
+- Attach Pictures.
 
 Calendar:
 
-• Allow to register events such as:
+* Allow to register events such as:
 
-  • Pet Dates;
+  - Pet Dates;
   
-  • Medical Appointments;
+  - Medical Appointments;
   
-  • Walks.
+  - Walks.
 
 ## Roadmap
 Implementações Futuras:
 
-• Salvar na nuvem para ser acessável por qualquer dispositivo;
+* Salvar na nuvem para ser acessável por qualquer dispositivo;
 
-• Personalização da interface pelo usuário (Cor de Background, foto de perfil do user e de seus pets);
+* Personalização da interface pelo usuário (Cor de Background, foto de perfil do user e de seus pets);
 
-• Atrelar mais de um pet ao perfil;
+* Atrelar mais de um pet ao perfil;
 
-• Permitir o usuário fazer download das fotos/vídeos upados.
+* Permitir o usuário fazer download das fotos/vídeos upados.
 
 Future Implementations:
 
-• Save data in cloud, being able to acess using any device;
+* Save data in cloud, being able to acess using any device;
 
-• Customizable user interface (Background Color, user's and pet's profile pictures);
+* Customizable user interface (Background Color, user's and pet's profile pictures);
 
-• Attach more pets to a profile;
+* Attach more pets to a profile;
 
-• Allow user to download updated pictures/videos.
+* Allow user to download updated pictures/videos.
 
 ## Suporte | Support
 *Em caso de dúvidas, entre em contato com nossos autores via Github!*
