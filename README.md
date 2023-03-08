@@ -43,7 +43,7 @@ Retains:
 
 • Walking Data (Organized by Day and Time);
 
-• Gut Health;
+• Digestive Health;
 
 • Attach Pictures.
 
@@ -97,4 +97,4 @@ Future Implementations:
 <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="img github" href="https://github.com/DaviMauricio"  height="16px" width="16px"/> <a href="https://github.com/virnaamaral"> Virna Amaral
 
 ## Licença | License
-MIT
+[MIT](https://github.com/bela975/PETracker/blob/main/license)
