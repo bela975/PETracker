@@ -60,8 +60,7 @@ Calendar:
 Acesse nosso protótipo de baixa fidelidade:
 Access our low fidelity prototype:
 
-https://www.figma.com/file/wUsYUGnBzqPxJJFZHpVwAK/Prot%C3%B3tipo-Lo-fi?node-id=0%3A1&t=sPsRqRg3Ym0KJWM8-1
-
+http://surl.li/fsmnr
 
 ## Roadmap
 Implementações Futuras:
