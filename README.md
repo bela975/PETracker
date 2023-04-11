@@ -63,8 +63,9 @@ Access our low fidelity prototype:
 http://surl.li/fsmnr
 ## Organização do projeto | Project administration
 Acesse nosso jira!
-l1nq.com/jiraPETracker
 
+
+https://grupofdsapp.atlassian.net/jira/software/projects/PET/boards/1/backlog
 ## Roadmap
 Implementações Futuras:
 
