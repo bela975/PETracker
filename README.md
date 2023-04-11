@@ -61,6 +61,9 @@ Acesse nosso protótipo de baixa fidelidade:
 Access our low fidelity prototype:
 
 http://surl.li/fsmnr
+## Organização do projeto | Project administration
+Acesse nosso jira!
+l1nq.com/jiraPETracker
 
 ## Roadmap
 Implementações Futuras:
