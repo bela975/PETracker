@@ -2,7 +2,8 @@ from django.db import models
 import calendar
 import matplotlib.pyplot as plt
 
-calendar.firstWeekday(6) 
+# Create your models here.
+calendar.firstweekday(6) 
 weekDays = 'Sun Mon Tue Wed Thu Fri Sat'.split()
 months = '''
 January February March April
