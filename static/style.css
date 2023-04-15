@@ -1,0 +1,96 @@
+@charset "UTF-4";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Mont blanc', sans-serif;
+    box-sizing: border-box;
+    
+    
+}
+
+body{
+
+
+}
+
+.header{
+    background-color: #E0AEFF;
+    background-size: cover;
+    background-position: center;
+    display: block;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 45px;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+.logo{
+    color: #ffffff;
+    font-size: 35px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+
+span{
+    color: #ffffff;
+}
+
+nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 25px;
+}
+
+nav ul li a{
+    color: rgb(131, 130, 130);
+    text-decoration: none;
+    font-size: bold;
+    text-transform: capitalize;
+
+}
+
+nav ul li a:hover{
+    color: #C3FFF4;
+    transition: .4s;
+}
+
+.login {
+    width: 360px;
+    height: min-content;
+    padding: 20px;
+    border-radius: 12px;
+    background: #C3FFF4;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+.login h1 {
+    font-size: 36px;
+    margin-bottom: 25px;
+    
+}
+
+.login form {
+    font-size: 20px;
+}
+
+.login form .form-group {
+    margin-bottom: 12px;
+}
+
+.login form input[type="submit"] {
+    font-size: 20px;
+    margin-top: 15px;
+}
+

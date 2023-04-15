@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>To-Do List</title>
+</head>
+<body>
+  <div class="content">
+    <div class="row">
+      <div class="col-12">
+        <h1> To-Do List </h1>
+        <form>
+          <input type="text" name="task" id="task" placeholder="Nova Tarefa..." />
+          <input type="button" name="" value="Add task" onclick="addTask();" />
+        </form>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+          <div class="to-do-list-box">
+            <ul id="myList">
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div> 
+<script type="text/javascript">
+    var ul = document.getElementById("myList");
+    var li;
+    var itemId;
+    var item;
+  
+    function addTask() {
+        if (document.getElementById("task").value !== "") {
+          item = document.getElementById("task");
+          itemId = ul.childElementCount;
+          li = createTaskEl(item.value, itemId);
+          li.appendChild(createRemoveTaskBtn(itemId));
+          ul.appendChild(li);
+          item.value = "";
+        }
+    }
+  
+    function removeTask(itemId) {
+        for (i = 0; i < ul.children.length; i++) {
+          if (ul.children[i].getAttribute("index") == itemId) {
+            ul.children[i].remove();
+          }
+        }
+    }
+  
+    function createTaskEl(itemValue, itemId) {
+        let li = document.createElement("li");
+        li.setAttribute("index", itemId);
+        li.appendChild(document.createTextNode(itemValue));
+        return li;
+    }
+  
+    function createRemoveTaskBtn(itemId) {
+        let btn = document.createElement("button");
+        btn.setAttribute("onclick", "removeTask(" + itemId + ")");
+        btn.innerHTML = "X";
+        return btn;
+    }
+</script>
+</body>
+</html>
