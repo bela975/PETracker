@@ -61,7 +61,7 @@ def index(request):
 
 class CalendarView(generic.ListView):
     model = Event
-    template_name = 'PETracker/calendar.html'
+    template_name = 'calendar.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -70,14 +70,14 @@ class CalendarView(generic.ListView):
         d = get_date(self.request.GET.get('day', None))
 
         # Instantiate our calendar class with today's year and date
-        cal = Calendar(d.year, d.month)
+        recipes = Calendar(d.year, d.month)
         
         d = get_date(self.request.GET.get('month', None))
         context['prev_month'] = prev_month(d)
         context['next_month'] = next_month(d)
         
         # Call the formatmonth method, which returns our calendar as a table
-        html_cal = cal.formatmonth(withyear=True)
+        html_cal = recipes.formatmonth(withyear=True)
         context['calendar'] = mark_safe(html_cal)
         return context
     
@@ -110,5 +110,5 @@ def event(request, event_id=None):
     form = EventForm(request.POST or None, instance=instance)
     if request.POST and form.is_valid():
         form.save()
-        return HttpResponseRedirect(reverse('cal:calendar'))
-    return render(request, 'cal/event.html', {'form': form})
+        return HttpResponseRedirect(reverse('recipes:calendar'))
+    return render(request, 'event.html', {'form': form})

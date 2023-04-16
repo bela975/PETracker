@@ -28,7 +28,7 @@
 
         <div class="container">
             <div class="row align-items-center">
-                <form action="{% url 'login' %}" method="POST">{% csrf_token %}
+                <form action="{% url 'recipes:login' %}" method="POST">{% csrf_token %}
                     <input type="text" placeholder="Username..." name="username">
                     <br>
                     <br>
@@ -39,7 +39,7 @@
                 </form>
 
                 
-                <form action="{% url 'login' %}" method="POST">{% csrf_token %}
+                <form action="{% url 'recipes:login' %}" method="POST">{% csrf_token %}
                     <input type="text" placeholder="Username..." name="username">
                     <br>
                     <br>
