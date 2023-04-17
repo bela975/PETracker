@@ -61,8 +61,9 @@ Acesse nosso protótipo de baixa fidelidade:
 Access our low fidelity prototype:
 
 http://surl.li/fsmnr
-## Organização do projeto | Project administration
-Acesse nosso jira!
+## Organização do projeto | Project Administration
+Acesse nosso Jira!
+Acess our Jira!
 
 
 https://grupofdsapp.atlassian.net/jira/software/projects/PET/boards/1/backlog
