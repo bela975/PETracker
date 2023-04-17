@@ -10,7 +10,7 @@
 }
 
 body{
-    background-color: #000000;
+    background-color: #ffffff;
 
 }
 
@@ -38,7 +38,7 @@ nav{
 
 
 span{
-    color: #ffffff;
+    color: #000000;
 }
 
 nav ul li{
@@ -50,7 +50,7 @@ nav ul li{
 nav ul li a{
     color: rgb(131, 130, 130);
     text-decoration: none;
-    font-size: bold;
+    font-size: large;
     text-transform: capitalize;
 
 }
@@ -111,7 +111,7 @@ nav ul li a:hover{
   
   .btn {
     outline: none;
-    color: black;
+    color: paleturquoise;
     background-color: transparent;
     box-shadow: 0 0 0 0;
   }
