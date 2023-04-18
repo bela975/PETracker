@@ -55,17 +55,33 @@ Calendar:
   
   - Walks.
 
-## Protótipo Lo-fi | Lo-fi prototype
+## Protótipo Lo-fi | Lo-fi Prototype
 
 Acesse nosso protótipo de baixa fidelidade:
+
 Access our low fidelity prototype:
 
 http://surl.li/fsmnr
-## Organização do projeto | Project administration
-Acesse nosso jira!
+## Organização do projeto | Project Administration
+Acesse nosso Jira!
+
+Acess our Jira!
 
 
 https://grupofdsapp.atlassian.net/jira/software/projects/PET/boards/1/backlog
+
+## Diagrama de Atividades | Activities Diagram
+
+Acesse nosso diagrama de atividades para entender as funcionalidades do projeto.
+
+Access our activity diagram to understand the project's functionalities.
+
+https://app.diagrams.net/#G14KjO9e44-d0-GkIBPxs1kQS_EySqyKqF
+
+## Experiência da Equipe - Programação em Pares | Group's Experience - Pair Programming
+
+<a href="https://docs.google.com/document/d/1pWCmzD89mb-wulBPBt-TiDKd3MmEOR7viZFkSn-rvZk/edit?usp=sharing"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Google_Docs_logo_%282014-2020%29.svg/1481px-Google_Docs_logo_%282014-2020%29.svg.png" alt="Docs" style="width:40px;height:57px;"></a>
+
 ## Roadmap
 Implementações Futuras:
 
