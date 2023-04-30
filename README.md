@@ -33,7 +33,7 @@ Calendário:
   - Passeios.
 
 
-Retains:
+Contains:
 
 * Medical Appointment's Data;
 
