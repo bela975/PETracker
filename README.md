@@ -57,7 +57,7 @@ Calendar:
 
 ## Protótipo Lo-fi | Lo-fi Prototype
 
-Acesse nosso protótipo de baixa fidelidade:
+Acesse nosso protótipo de baixa fidelidade: 
 Access our low fidelity prototype:
 
 http://surl.li/fsmnr
@@ -70,7 +70,7 @@ https://grupofdsapp.atlassian.net/jira/software/projects/PET/boards/1/backlog
 
 ## Diagrama de Atividades | Activities Diagram
 
-Acesse nosso diagrama de atividades para entender as funcionalidades do projeto.
+Acesse nosso diagrama de atividades para entender as funcionalidades do projeto. 
 Access our activity diagram to understand the project's functionalities.
 
 https://app.diagrams.net/#G14KjO9e44-d0-GkIBPxs1kQS_EySqyKqF
