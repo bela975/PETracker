@@ -1,6 +1,6 @@
-from django.urls import path, re_path, include
-
-# from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.urls import path, re_path
+from django.contrib import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from . import views
 # from . import settings
 from django.contrib.staticfiles.urls import static
@@ -9,7 +9,8 @@ from .views import kanban
 
 app_name = 'recipes'
 urlpatterns = [
-    path('login/', views.login, name='login'),
+    path('admin/', admin.site.urls),
+    path('', views.login, name='login'),
     path('register/', views.register, name='register'),
     path('pet/', views.Pet, name='pet'),
     path('pet/register/', views.register_pet, name='register_pet'),
