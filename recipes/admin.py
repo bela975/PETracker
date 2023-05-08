@@ -7,4 +7,4 @@ from .models import Pet
 admin.site.register(Event)
 @admin.register(Pet)
 class PetAdmin(admin.ModelAdmin):
-    list_display = ['id', 'city', 'description', 'user']
+    list_display = ['id','description', 'user']
