@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.navbar {
+    width: 100%;
+    background-color: #C0BFDD;
+    overflow: auto;
+    
+  }
+  
+  .navbar a {
+    float: left;
+    text-align: right;
+    padding: 12px;
+    color: #000062;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  
+  .navbar a:hover {
+    background-color: #00006238;
+    transition: 0.5s;
+    border-radius: 10px;
+  }
+  
+  
+  .active {
+    background-color: #f9a6298c;
+  }
+  
+  
+  @media screen and (max-width: 500px) {
+    .navbar a {
+      float: none;
+      display: block;
+    }
+  }
+  
+  .title{
+    margin-top: 40px;
+    margin-left: 60px;
+    text-align: left;
+    color: #383661;
+    font-size: 70px;
+  }
+  
+.container{
+    max-width: 600px;
+    background: #fff;
+    border-radius: 5px;
+    width: 600px;
+    padding: 30px;
+    box-shadow: 0 2px 2px 3px rgba(0, 0, 0, 0.1);
+}
+.wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    width: 100%;
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e4e1e1;
+}
+.add{
+    text-decoration: none;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: #8bc34a;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex{
+    display: flex;
+    gap: 1.5em;
+    margin-bottom: 15px;
+}
+.delete{
+    text-decoration: none;
+    display: inline-block;
+    background: #f44336;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+input{
+    padding: 8px 10px;
+    background: #ddd;
+    border: none;
+    width: 50%;
+    border-radius: 5px;
+}
+input:focus{
+    outline: 1px solid #efefef;
+}
+.inp-group{
+    margin-bottom: 20px;
+}
+
+header{
+    display: flex;
+    align-items: stretch;
+}
