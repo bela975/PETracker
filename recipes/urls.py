@@ -9,7 +9,6 @@ from .views import kanban
 
 app_name = 'recipes'
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', views.login, name='login'),
     path('register/', views.register, name='register'),
     path('pet/', views.Pet, name='pet'),
