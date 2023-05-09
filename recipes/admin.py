@@ -1,5 +1,5 @@
 from django.contrib import admin
-from recipes.models import Event
+from .models import Event
 from .models import Pet
 
 # Register your models here.

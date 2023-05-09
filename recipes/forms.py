@@ -1,5 +1,5 @@
 from django.forms import ModelForm, DateInput,modelformset_factory
-from recipes.models import Event
+from .models import Event
 from .models import Task
 from django.forms.widgets import DateInput
 

@@ -1,11 +1,11 @@
 from django.urls import path, re_path
-from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from . import views
 # from . import settings
 from django.contrib.staticfiles.urls import static
 from django.views.generic import RedirectView
 from .views import kanban
+
 
 app_name = 'recipes'
 urlpatterns = [
