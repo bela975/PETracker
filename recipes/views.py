@@ -182,20 +182,6 @@ def get_date(req_day):
     return datetime.today()
 
 
-def event(request, event_id=None):
-    instance = Event()
-    if event_id:
-        instance = get_object_or_404(Event, pk=event_id)
-    else:
-        instance = Event()
-
-    form = EventForm(request.POST or None, instance=instance)
-    if request.POST and form.is_valid():
-        form.save()
-        return HttpResponseRedirect(reverse('recipes:calendar'))
-    return render(request, 'event.html', {'form': form})
-
-
 def kanban(request):
     return render(request, 'kanban.html')
 
@@ -252,11 +238,9 @@ def get_date(req_day):
     return datetime.today()
 
 
-def event(request, event_id=None, color_selected=None):
-    instance = Event()
+def event(request, event_id=None):
     if event_id:
         instance = get_object_or_404(Event, pk=event_id)
-        event_color(color_selected)
     else:
         instance = Event()
 
@@ -264,18 +248,22 @@ def event(request, event_id=None, color_selected=None):
     if request.POST and form.is_valid():
         form.save()
         return HttpResponseRedirect(reverse('recipes:calendar'))
-    return render(request, 'event.html', {'form': form})
+
+    event_color_value = event_color(instance)
+    context = {'form': form, 'event_color': event_color_value}
+    return render(request, 'event.html', context)
 
 
-def event_color(color_selected):
+def event_color(instance):
     color = '#8d2a86'
-    if color_selected == 1:
+    color_selected = instance.colorSelected
+    if color_selected == '1':
         color = '#f000a4'
-    elif color_selected == 2:
+    elif color_selected == '2':
         color = '#42b40c'
-    elif color_selected == 3:
+    elif color_selected == '3':
         color = '#107ff7'
-    elif color_selected == 4:
+    elif color_selected == '4':
         color = '#ff1404'
     else:
         color = color

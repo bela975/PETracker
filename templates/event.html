@@ -24,7 +24,7 @@ Event
     {% endfor %}
 {% endif %}
 
-<form method="post">
+<form method="post" style="background-color: {{ event_color }};">
   {% csrf_token %}
   <table class="form form-table">
     {{ form }}
@@ -32,3 +32,4 @@ Event
   </table>
 </form>
 {% endblock %}
+

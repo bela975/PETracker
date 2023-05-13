@@ -39,7 +39,7 @@ class Event(models.Model):
     description = models.TextField()
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
-    colorSelected = models.Charfield(max_lenght=1)
+    colorSelected = models.CharField
 
     @property
     def get_html_url(self):
