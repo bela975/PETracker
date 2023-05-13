@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alergy Detail</title>
+</head>
+<body>
+
+{% block content %}
+
+<div class="card" style="width: 18rem;">
+    <div class="card-header">
+        Alergy Detail
+    </div>
+</div>
+
+<div class="card center" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{ alergy.title }}</li>
+    </ul>
+  </div>
+
+  <a href="{% url 'recipes:delete_alergy' alergy.id %}" class="btn btn-danger btn-small">Delete Alergy</a>
+  <a href="{% url 'recipes:home' %}">Home</a>
+
+{% endblock %}
+
+</body>
+</html>

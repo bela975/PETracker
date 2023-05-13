@@ -20,7 +20,11 @@
     </div>
     <div class="title">
         <a>PETracker</a>
+        {% if user.is_authenticated %}
+          <h2 class="text-center">Bem-vindo, {{ user.username }}!</h2>
+        {% endif %}
     </div>
+
     <div class="logo">
         <img src="https://raw.githubusercontent.com/bela975/PETracker/main/img/petracker_logo.png" alt="logo">
     </div>
@@ -33,7 +37,7 @@
               <a href="{% url 'recipes:home' %}">
                 <img src="{{ p.photo }}" alt="{{ p.name }}">
                 <div class="container">
-                  <p>{{ p.name }}</p>
+                  <p>{{ p.breed }}</p>
                 </div>
               </a>
             </div>

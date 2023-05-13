@@ -5,4 +5,4 @@ db.sqlite3
 env/
 static/
 *.pyc
-venv
+selPath.py

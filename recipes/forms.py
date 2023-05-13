@@ -1,5 +1,5 @@
 from django.forms import ModelForm, DateInput,modelformset_factory
-from .models import Event
+from .models import Event, Alergy, Medicine
 from .models import Task
 from django.forms.widgets import DateInput
 
@@ -31,3 +31,21 @@ class EventForm(ModelForm):
     # input_formats parses HTML5 datetime-local input to datetime field
     self.fields['start_time'].input_formats = ('%Y-%m-%dT%H:%M',)
     self.fields['end_time'].input_formats = ('%Y-%m-%dT%H:%M',)
+
+
+class AlergyForm(ModelForm):
+    class Meta:
+        model = Alergy
+        fields = '__all__'
+
+
+class MedicineForm(ModelForm):
+    class Meta:
+        model = Medicine
+        fields = '__all__'
+        widgets = {
+            'time': DateInput(attrs={'type': 'datetime-local'}, format='%Y-%m-%dT%H:%M'),
+        }
+    def __init__(self, *args, **kwargs):
+        super(MedicineForm, self).__init__(*args, **kwargs)
+        self.fields['time'].input_formats = ('%Y-%m-%dT%H:%M',)

@@ -20,8 +20,13 @@ urlpatterns = [
     re_path(r'^event/new/$', views.event, name='event_new'),
     re_path(r'^event/edit/(?P<event_id>\d+)/$', views.event, name='event_edit'),
     path('kanban/', kanban, name='kanban'),
-    # path('add_to_cart/<int:pk>/', views.add_to_cart, name='add_to_cart'),
+    path('medicine/', views.medicine, name='medicine'),
+    path('home/<int:id>', views.alergy_detail, name='alergy_detail'),
+    path('home/delete/<int:id>', views.delete_alergy, name='delete_alergy'),
+    path('medicine/<int:id>', views.medicine_detail, name='medicine_detail'),
+    path('medicine/delete/<int:id>', views.delete_medicine, name='delete_medicine'),
 ]
-
+    
+# path('add_to_cart/<int:pk>/', views.add_to_cart, name='add_to_cart'),
 # urlpatterns += staticfiles_urlpatterns()
 # urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

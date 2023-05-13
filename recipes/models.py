@@ -10,9 +10,8 @@ class Pet(models.Model):
     description = models.TextField()
     phone = models.CharField(max_length=11)
     email = models.EmailField()
+    photo = models.ImageField(default='Legal')
     begin_date = models.DateTimeField(auto_now_add=True)
-    photo = models.ImageField()
-    # upload_to='pet'
     active = models.BooleanField(default=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
@@ -39,9 +38,22 @@ class Event(models.Model):
     description = models.TextField()
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
-    colorSelected = models.CharField
+    colorSelected = models.CharField(max_length=1)
 
     @property
     def get_html_url(self):
         url = reverse('recipes:event_edit', args=(self.id,))
         return f'<a href="{url}"> {self.title} </a>'
+    
+    
+class Alergy(models.Model):
+    title = models.CharField(max_length=50)
+    def str(self):
+        return f"{self.title}"
+
+class Medicine(models.Model):
+    med = models.CharField(max_length=50)
+    time = models.DateTimeField(max_length=50)
+    resp = models.CharField(max_length=50)
+    def str(self):
+        return f"{self.med}"
