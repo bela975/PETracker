@@ -252,10 +252,11 @@ def get_date(req_day):
     return datetime.today()
 
 
-def event(request, event_id=None):
+def event(request, event_id=None, color_selected=None):
     instance = Event()
     if event_id:
         instance = get_object_or_404(Event, pk=event_id)
+        event_color(color_selected)
     else:
         instance = Event()
 
@@ -264,3 +265,18 @@ def event(request, event_id=None):
         form.save()
         return HttpResponseRedirect(reverse('recipes:calendar'))
     return render(request, 'event.html', {'form': form})
+
+
+def event_color(color_selected):
+    color = '#8d2a86'
+    if color_selected == 1:
+        color = '#f000a4'
+    elif color_selected == 2:
+        color = '#42b40c'
+    elif color_selected == 3:
+        color = '#107ff7'
+    elif color_selected == 4:
+        color = '#ff1404'
+    else:
+        color = color
+    return color
