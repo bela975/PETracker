@@ -5,4 +5,6 @@ db.sqlite3
 env/
 static/
 *.pyc
+venv
+__pycache__
 selPath.py

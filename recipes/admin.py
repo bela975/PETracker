@@ -1,10 +1,13 @@
 from django.contrib import admin
-from .models import Event
+from recipes.models import Event
+
+
 from .models import Pet
 
 # Register your models here.
 
 admin.site.register(Event)
+
 @admin.register(Pet)
 class PetAdmin(admin.ModelAdmin):
-        list_display = ['name', 'id', 'breed', 'description', 'user']
+    list_display = ['name', 'id', 'breed', 'description', 'user']

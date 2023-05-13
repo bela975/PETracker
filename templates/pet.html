@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -34,7 +35,7 @@
         {% for p in pet %}
           <div class="col-sm-4">
             <div class="polaroid">
-              <a href="{% url 'recipes:home' %}">
+              <a href="{% url 'recipes:home' pet_id=p.id %}">
                 <img src="{{ p.photo }}" alt="{{ p.name }}">
                 <div class="container">
                   <p>{{ p.breed }}</p>

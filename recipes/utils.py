@@ -1,6 +1,6 @@
+from datetime import datetime, timedelta
 from calendar import HTMLCalendar
 from .models import Event
-from datetime import datetime, timedelta
 
 class Calendar(HTMLCalendar):
 	def __init__(self, year=None, month=None):
@@ -20,7 +20,7 @@ class Calendar(HTMLCalendar):
 			return f"<td><span class='date'>{day}</span><ul> {d} </ul></td>"
 		return '<td></td>'
 
-	# formats a week as a try
+	# formats a week as a tr
 	def formatweek(self, theweek, events):
 		week = ''
 		for d, weekday in theweek:
