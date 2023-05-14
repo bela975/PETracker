@@ -82,8 +82,13 @@ def login(request):
 def plataforma(request):
     return render(request, 'pet.html')
 
+
+@login_required(login_url='login')
 def pet(request):
-    pet = Pet.objects.filter(active=True)
+    if request.user.is_authenticated:
+        pet = Pet.objects.filter(active=True, user=request.user)
+    else:
+        pet = []
     return render(request, 'pet.html', {'pet': pet})
 
 @login_required(login_url='/login/')
@@ -96,7 +101,7 @@ def register_pet(request):
         email = request.POST.get('email')
         ##photo = request.FILES.get('photo')
         user = request.user
-        pet = Pet.objects.create(name=name, breed=breed, description=description, phone=phone, email=email, user=user)
+        pet = Pet.objects.create(name=name, breed=breed, email=email, phone=phone, description=description, user=request.user)
         return redirect('recipes:pet')
     else:
         return render(request, 'register_pet.html')
@@ -111,7 +116,7 @@ def set_pet(request):
     description = request.POST.get('description')
     file = request.FILES.get('file')
     user = request.user
-    pet = Pet.objects.create(name=name, breed=breed, email=email, phone=phone, description=description, user=user)
+    pet = Pet.objects.create(name=name, breed=breed, description=description, phone=phone, email=email, user=request.user)
     
     return redirect('recipes:pet')
 
@@ -122,17 +127,14 @@ class CalendarView(generic.ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        # use today's date for the calendar
         d = get_date(self.request.GET.get('day', None))
 
-        # Instantiate our calendar class with today's year and date
         recipes = Calendar(d.year, d.month)
         
         d = get_date(self.request.GET.get('month', None))
         context['prev_month'] = prev_month(d)
         context['next_month'] = next_month(d)
         
-        # Call the formatmonth method, which returns our calendar as a table
         html_recipes = recipes.formatmonth(withyear=True)
         context['calendar'] = mark_safe(html_recipes)
         return context
@@ -184,15 +186,14 @@ def medicine(request):
     if request.method == "POST":
         form = MedicineForm(request.POST)
         if form.is_valid():
-            form.save()
+            medicine = form.save(commit=False)
+            medicine.user = request.user
+            medicine.save()
             return redirect("/medicine")
     else:
         form = MedicineForm()
-    return render(request, 'medicine.html', 
-                  {"form": form,
-                    "medicines": Medicine.objects.all(),
-                  })
-
+        medicines = Medicine.objects.filter(user=request.user) if request.user.is_authenticated else []
+    return render(request, 'medicine.html', {"form": form, "medicines": medicines})
 
 def alergy_detail(request, id):
     alergy = get_object_or_404(Alergy, pk=id)
@@ -228,3 +229,8 @@ def event_color(instance):
     else:
         color = color
     return color
+
+# def event_delete(event_id):
+#     event = get_object_or_404(Event, id=event_id)
+#     event.delete()
+#     return HttpResponseRedirect(reverse('recipes:calendar'))

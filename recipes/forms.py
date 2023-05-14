@@ -30,13 +30,13 @@ class EventForm(ModelForm):
 class AlergyForm(ModelForm):
     class Meta:
         model = Alergy
-        fields = '__all__'
+        fields =  ['title']
 
 
 class MedicineForm(ModelForm):
     class Meta:
         model = Medicine
-        fields = '__all__'
+        fields = ['med','resp','time']
         widgets = {
             'time': DateInput(attrs={'type': 'datetime-local'}, format='%Y-%m-%dT%H:%M'),
         }

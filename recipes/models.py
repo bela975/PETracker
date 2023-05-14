@@ -50,6 +50,7 @@ class Alergy(models.Model):
         return f"{self.title}"
 
 class Medicine(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     med = models.CharField(max_length=50)
     time = models.DateTimeField(max_length=50)
     resp = models.CharField(max_length=50)

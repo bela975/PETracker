@@ -29,6 +29,10 @@ Event
   <table class="form form-table">
     {{ form }}
     <tr><td colspan="2"><button type="submit" class="btn btn-info right"> Submit </button></td></tr>
+
+    
+    {% comment %} <a href="{% url 'recipes:event_delete' event.id %}" class="btn btn-danger btn-small">Delete</a> {% endcomment %}
+    
   
 </form>
 

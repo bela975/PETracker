@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="app para garantir o bem-estar do seu pet" content="Página inicial">
+    <meta name="app para garantir o bem-estar do seu pet" content="PÃ¡gina inicial">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static '/st.css' %}">
+    <link rel="stylesheet" href="{% static '/login.css' %}">
     
     <title>PETtracker</title>
 
@@ -22,64 +23,62 @@
         <a href="/calendar/"><i class="fa fa-fw fa-calendar"></i> calendar</a>
         <a href="/kanban/"><i class="fa fa-fw fa-table"></i>Checklist</a>
         <a href="/medicine/"> <i class="fa fa-fw fa-medkit"></i> Medicine </a>
-        <a href="/login/"><i class="fa fa-fw fa-user"></i> Login</a>
-    </div>
-    <div class="title">
-        <a>PETracker</a>
-        
+        <a href="{% url 'recipes:login'%}"><i class="fa fa-fw fa-user"></i> Login</a>
     </div>
 
-    <div class="header">
-        <div class="logo">
-            <img src="https://raw.githubusercontent.com/bela975/PETracker/main/img/petracker_logo.png" alt="logo">
+    <div class="content-page-home">
+        <div class="title">
+            <a>PETracker</a>
+    
+            <div class="info-pet">
+                <h1>nome do pet</h1>
+                
+                {% for pet in lista_pet %}
+                    {{ pet.name }}
+                    <br>
+                    {{ pet.breed }}
+                    <br>
+                    {{ pet.description }}
+                {% endfor %}
+                        
+            </div>
         </div>
 
+        <div class="header">
+            <div class="logo">
+                <img src="https://raw.githubusercontent.com/bela975/PETracker/33735714a052b92ac15696326f3b398ce1924b49/img/petracker_logo.png" alt="logo">
+            </div>
+        </div> 
     </div>
-    
-    <h1>teste</h1>
-    
-    {% for pet in lista_pet %}
 
-    {{ pet.name }}
-    <br>
-    {{ pet.breed }}
-    <br>
-    {{ pet.description }}
+<div class="container-alergies">
+    
+    <div class="card" style="width: 40%;">
+            <div class="card-header">
+                Alergies
+            </div>
+        </div>
+    {% for alergy in alergies %}
+        
+        <div class="card" style="width: 40%;">
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item"><a href="{% url 'recipes:alergy_detail' alergy.id %}">{{ alergy.title }}</a> </li>
+            </ul>
+        </div>
 
     {% endfor %}
 
+    <h3>Add Alergy</h3>
 
-{% block content %}
+    <form method="post">
+        <table>
+                {{ form }}
+        </table>
+        {% csrf_token %}
+        <button type="submit">Add</button>
+    </form>
 
-<h1>homepage</h1>
-
-    <div class="card" style="width: 18rem;">
-        <div class="card-header">
-            Alergies
-        </div>
-    </div>
-{% for alergy in alergies %}
-    
-    <div class="card" style="width: 18rem;">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><a href="{% url 'recipes:alergy_detail' alergy.id %}">{{ alergy.title }}</a> </li>
-        </ul>
-      </div>
-
-{% endfor %}
-
-<h3>Add Alergy</h3>
-
-<form method="post">
-    <table>
-            {{ form }}
-    </table>
-    {% csrf_token %}
-    <button type="submit">Add</button>
-</form>
-
-{% endblock %}
-
+</div>
 
 </body>
 </html>

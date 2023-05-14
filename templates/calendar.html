@@ -5,6 +5,8 @@ Calendar
 {% endblock %}
 
 {% block content %}
+
+
 <div class="clearfix">
 	<a class="btn btn-info left" href="{% url 'recipes:calendar' %}?{{ prev_month }}"> Previous Month </a> 
 	 <a class="btn btn-info right" href="{% url 'recipes:calendar' %}?{{ next_month }}"> Next Month </a>  

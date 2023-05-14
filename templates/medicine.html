@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- {% load static %} -->
+{% load static %} 
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,7 @@
     <meta name="app para garantir o bem-estar do seu pet" content="PÃ¡gina inicial">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static '/st.css' %}">
+    <link rel="stylesheet" href="{% static '/login.css' %}">
     
     <title>PETtracker</title>
 
@@ -15,6 +16,11 @@
 </head>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+    <div class="navbar">
+        <a class="activate" href="/home/"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href=" {% url 'recipes:login'%} "><i class="fa fa-fw fa-user"></i> Login</a>
+    </div>
 
     
     {% block content %}
@@ -51,20 +57,23 @@
     
     
     {% endfor %}
-    
-    {% block title %}Create Post{% endblock %}
-    <h2>create a cronogram</h2>
-    
-    <form method="post">
-        <table>
-            {{ form }}
-        </table>
-        {% csrf_token %}
-        <button type="submit">Create</button>
-    </form>
-    
-    {% endblock %}
-    
+
+    <div class="container-alergies">
+
+        {% block title %}Create Post{% endblock %}
+        <h2>create a cronogram</h2>
+        
+        <form method="post">
+            <table>
+                {{ form }}
+            </table>
+            {% csrf_token %}
+            <button type="submit">Create</button>
+        </form>
+        
+        {% endblock %} 
+
+    </div>
     
 </body>
 </html>

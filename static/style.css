@@ -56,20 +56,21 @@
 .login-box {
     position: absolute;
     top: 50%;
-    left: 50%;
-    width: 400px;
+    left: 50%; 
+    width: 40%;
     padding: 40px;
-    margin: 20px auto;
+    margin-top: 200px;
     -webkit-transform: translate(-50%, -55%);
         -ms-transform: translate(-50%, -55%);
             transform: translate(-50%, -55%);
     background: #f9a6298c;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    -webkit-box-shadow: 0 15px 25px rgba(0,0,0,.6);
-            box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
+
   }
+
+
   
   .login-box p:first-child {
     margin: 0 0 30px;
@@ -97,7 +98,7 @@
     background: transparent;
   }
   .login-box .user-box label {
-    position: absolute;
+    position: absolute; 
     top:0;
     left: 0;
     padding: 10px 0;
@@ -119,7 +120,6 @@
   .login-box form a {
     position: relative;
     display: inline-block;
-    padding: 10px 20px;
     font-weight: bold;
     color: #fff;
     font-size: 16px;
@@ -129,7 +129,20 @@
     -webkit-transition: .5s;
     transition: .5s;
     margin-top: 40px;
-    letter-spacing: 3px
+    letter-spacing: 3px;
+    width: 100%;
+    border-radius: 15px;
+    height: 40px;
+    z-index: 99;
+    
+  }
+
+  .login-box form a input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: large;
+    font-weight: 400;
   }
   
   .login-box a:hover {
@@ -296,6 +309,13 @@
     box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
     letter-spacing: 0.05em;
     border-radius: 20em;
+    width: 130px;
+  }
+
+  .cssbuttons-io-button a {
+    text-decoration: none;
+    color: #fff;
+
   }
   
   .cssbuttons-io-button svg {
