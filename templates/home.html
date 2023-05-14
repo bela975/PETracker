@@ -31,13 +31,16 @@
             <a>PETracker</a>
     
             <div class="info-pet">
-                <h1>nome do pet</h1>
+             
                 
                 {% for pet in lista_pet %}
+                    <strong>Pet name:</strong> 
                     {{ pet.name }}
                     <br>
+                    <strong> Breed: </strong> 
                     {{ pet.breed }}
                     <br>
+                    <strong> Description: </strong> 
                     {{ pet.description }}
                 {% endfor %}
                         
