@@ -31,8 +31,20 @@
             <a>PETracker</a>
     
             <div class="info-pet">
-             
-                
+
+                             
+                {% if pet %}
+                    <strong>Pet name:</strong> 
+                    {{ pet.name }}
+                    <br>
+                    <strong> Breed: </strong> 
+                    {{ pet.breed }}
+                    <br>
+                    <strong> Description: </strong> 
+                    {{ pet.description }}
+                {% endif %}
+
+
                 {% for pet in lista_pet %}
                     <strong>Pet name:</strong> 
                     {{ pet.name }}
@@ -42,7 +54,7 @@
                     <br>
                     <strong> Description: </strong> 
                     {{ pet.description }}
-                {% endfor %}
+                {% endfor %} 
                         
             </div>
         </div>

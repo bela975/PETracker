@@ -8,9 +8,16 @@ Calendar
 
 
 <div class="clearfix">
-	<a class="btn btn-info left" href="{% url 'recipes:calendar' %}?{{ prev_month }}"> Previous Month </a> 
-	 <a class="btn btn-info right" href="{% url 'recipes:calendar' %}?{{ next_month }}"> Next Month </a>  
-	<a class="btn btn-info right" href="{% url 'recipes:event_new' %}"> New Event </a> 
+    <a class="btn btn-info left" href="{% url 'recipes:calendar' %}?{{ prev_month }}"> Previous Month </a> 
+    <a class="btn btn-info right" href="{% url 'recipes:calendar' %}?{{ next_month }}"> Next Month </a>
+    <a class="btn btn-info right" href="{% url 'recipes:event_new' %}"> New Event </a> 
+    <from Event(colorSelected) style = "color = {{ event_color }}">
+    <a button class="btn btn-info left" style= "position:absolut; left:185px;" > Event tags: </a>
+    <a button class="btn btn-info left" style= "position:absolut; left:280px; background-color: #978DCC"> Walks </a>
+    <a button class="btn btn-info left" style= "position:absolut; left:340px; background-color: #FAA42B"> Meet Ups </a>
+    <a button class="btn btn-info left" style= "position:absolut; left:430px; background-color: #4FD881"> Vet </a> 
+    <a button class="btn btn-info left" style= "position:absolut; left:470px; background-color: #00B7D9"> Others </a>
+
 </div>
 
 

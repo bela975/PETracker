@@ -22,8 +22,7 @@ from .forms import EventForm
 @login_required(login_url='login')
 def home(request, pet_id):
     pet = get_object_or_404(Pet, pk=pet_id, user=request.user)
-    lista_pet = Pet.objects.filter(user=request.user)
-
+    
     if request.method == "POST":
         form = AlergyForm(request.POST)
         if form.is_valid():
@@ -33,6 +32,9 @@ def home(request, pet_id):
             return redirect("/home/{}".format(pet_id))
     else:
         form = AlergyForm()
+
+    lista_pet = Pet.objects.filter(user=request.user)
+
     return render(request, 'home.html',
                   {"form": form,
                    "alergies": Alergy.objects.filter(pet=pet),
@@ -163,15 +165,21 @@ def event(request, event_id=None):
         instance = get_object_or_404(Event, pk=event_id)
     else:
         instance = Event()
-    
+
     form = EventForm(request.POST or None, instance=instance)
     if request.POST and form.is_valid():
         form.save()
         return HttpResponseRedirect(reverse('recipes:calendar'))
-    
+
     event_color_value = event_color(instance)
     context = {'form': form, 'event_color': event_color_value}
     return render(request, 'event.html', context)
+
+
+# def event_delete(request, event_id):
+#     event = get_object_or_404(Event, id=event_id)
+#     event.delete()
+#     return redirect(request, "/calendar")
 
 def kanban(request):
     return render(request, 'kanban.html')
@@ -216,21 +224,15 @@ def delete_medicine(request, id):
 def event_color(instance):
     color = '#978DCC'
     color_selected = instance.colorSelected
-    if color_selected == '1':
+    if color_selected == 'purple':
         color = '#978DCC' #roxo gato (default)
-    elif color_selected == '2':
+    elif color_selected == 'orange':
         color = '#FAA42B' #lalanja dog
-    elif color_selected == '3':
+    elif color_selected == 'blue':
         color = '#00B7D9' #azul fofo papagaio
-    elif color_selected == '4':
-        color = '#F1E05A' #amarelo javascript
-    elif color_selected == '5':
+    elif color_selected == 'green':
         color = '#4FD881' #verde mama & bela
     else:
         color = color
     return color
 
-# def event_delete(event_id):
-#     event = get_object_or_404(Event, id=event_id)
-#     event.delete()
-#     return HttpResponseRedirect(reverse('recipes:calendar'))
