@@ -66,6 +66,12 @@ Acesse nosso jira!
 
 
 https://grupofdsapp.atlassian.net/jira/software/projects/PET/boards/1/backlog
+## Diagrama de Atividades
+Acesse nosso diagrama!
+
+https://app.diagrams.net/#G14KjO9e44-d0-GkIBPxs1kQS_EySqyKqF
+
+
 ## Roadmap
 Implementações Futuras:
 
