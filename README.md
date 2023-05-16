@@ -66,10 +66,14 @@ Acesse nosso jira!
 
 
 https://grupofdsapp.atlassian.net/jira/software/projects/PET/boards/1/backlog
-## Diagrama de Atividades
+## Diagrama de Atividades 
 Acesse nosso diagrama!
 
-https://app.diagrams.net/#G14KjO9e44-d0-GkIBPxs1kQS_EySqyKqF
+Fluxo Principal:
+https://drive.google.com/file/d/1v7vV5ij_ElmjVCekBMpqOulCobckkFl8/view?usp=drivesdk
+
+Subfluxos:
+https://drive.google.com/file/d/1_qrBc1IZ9FREM3EiZv8RmmEEE0JkaCzq/view?usp=drivesdk
 
 
 ## Roadmap
