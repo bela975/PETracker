@@ -1,3 +1,4 @@
+from django import forms
 from django.forms import ModelForm
 from django.forms.widgets import DateInput
 from recipes.models import Event, Pet
@@ -7,9 +8,16 @@ from .models import Medicine, Alergy, Food
 class PetForm(ModelForm):
     class Meta:
         model = Pet
-        fields = ('name', 'breed', 'description', 'phone', 'email', 'photo' )
+        fields = ('name', 'breed', 'description', 'phone', 'email', 'photo', 'background_color')
         exclude = ['user']
 
+class BackgroundColorForm(forms.ModelForm):
+    class Meta:
+        model = Pet
+        fields = ['background_color']
+        widgets = {'background_color':forms.Select(attrs={'class':'form-control'}), }
+
+        
 class EventForm(ModelForm):
   class Meta:
     model = Event

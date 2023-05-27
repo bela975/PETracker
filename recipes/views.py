@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.utils.safestring import mark_safe
 from recipes.models import Pet, Medicine, Food
-from .forms import AlergyForm, MedicineForm, PetForm, FoodForm
+from .forms import AlergyForm, BackgroundColorForm, MedicineForm, PetForm, FoodForm
 from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
@@ -77,20 +77,41 @@ def register_pet(request):
         form = PetForm()
     return render(request, 'register_pet.html', {"form":form, "pets": Pet.objects.all()})
 
+
+
+
+
 @login_required(login_url='recipes:login')
 def pet_home(request):
     if request.method == "POST":
-        form = AlergyForm(request.POST)
-        if form.is_valid():
-            form.save()
+        alergy_form = AlergyForm(request.POST)
+        background_color_form = BackgroundColorForm(request.POST)
+        if alergy_form.is_valid():
+            alergy_form.save()
+            return redirect("/home_pet")
+        
+        if background_color_form.is_valid():
+            pet = Pet.objects.first()
+            pet.background_color = background_color_form.cleaned_data['background_color']
+            pet.save()
             return redirect("/home_pet")
     else:
-        form = AlergyForm()
+        alergy_form = AlergyForm()
+        background_color_form = BackgroundColorForm()
+
+    pet = Pet.objects.first()
+    background_color = pet.background_color if pet else '#FFFFFF'
+
     return render(request, 'home_pet.html', 
-                  {"form": form,
-                   "alergies": Alergy.objects.all(),
+                   {"alergy_form": alergy_form,
+                    "alergies": Alergy.objects.all(),
+                   "background_color_form": background_color_form,
+                   "background_color": background_color,
                    "pets": Pet.objects.all(),
-                   })
+                    })
+
+
+
 
 def alergy_detail(request, id):
     alergy = get_object_or_404(Alergy, pk=id)
@@ -218,3 +239,4 @@ def delete_food(request, id):
     return redirect("/food")
 
 # fim food
+

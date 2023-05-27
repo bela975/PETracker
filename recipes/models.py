@@ -12,6 +12,13 @@ class Pet(models.Model):
     phone = models.CharField(max_length=11)
     email = models.EmailField()
     photo = models.ImageField(upload_to='images/', blank=True, null=True)
+    COLOR_CHOICES = [
+    ('#978DCC', 'Purple'),
+    ('#FAA42B', 'Orange'),
+    ('#00B7D9', 'Blue'),
+    ('#4FD881', 'Green'),
+]
+    background_color = models.CharField(max_length=8, choices=COLOR_CHOICES, default=0)
 
 
     def str(self):
