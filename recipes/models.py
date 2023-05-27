@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 
 
+
 class Pet(models.Model):
     
     name = models.CharField(max_length=100)
@@ -90,3 +91,12 @@ class Food(models.Model):
         return f"{self.food}"
 
 # fim food
+
+#kanban- checklist
+class Taskanban(models.Model):
+    name = models.CharField(max_length=255)
+    responsible = models.CharField(max_length=255)
+    due_date = models.DateField()
+    def str(self):
+        return self.name
+# fim kanban - checklist

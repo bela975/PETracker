@@ -21,5 +21,8 @@ urlpatterns = [
     path('food/delete/<int:id>', views.delete_food, name='delete_food'),
     path('home_pet/<int:id>', views.alergy_detail, name='alergy_detail'),
     path('home_pet/delete/<int:id>', views.delete_alergy, name='delete_alergy'),
+    path('kanban/', views.kanban, name='kanban'),
+    path('add_task/', views.add_task, name='add_task'),
+    path('remove_task/<int:task_id>/', views.remove_task, name='remove_task'),
 
 ]

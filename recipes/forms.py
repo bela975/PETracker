@@ -2,7 +2,7 @@ from django import forms
 from django.forms import ModelForm
 from django.forms.widgets import DateInput
 from recipes.models import Event, Pet
-from .models import Medicine, Alergy, Food
+from .models import Medicine, Alergy, Food, Taskanban
 
 
 class PetForm(ModelForm):
@@ -59,3 +59,9 @@ class FoodForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super(FoodForm, self).__init__(*args, **kwargs)
         self.fields['time'].input_formats = ('%Y-%m-%dT%H:%M',)
+
+class TaskanbanForm(ModelForm):
+    class Meta:
+        model = Taskanban
+        fields = '__all__'
+

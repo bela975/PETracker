@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.utils.safestring import mark_safe
 from recipes.models import Pet, Medicine, Food
-from .forms import AlergyForm, BackgroundColorForm, MedicineForm, PetForm, FoodForm
+from .forms import AlergyForm, BackgroundColorForm, MedicineForm, PetForm, FoodForm, Taskanban
 from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
@@ -236,4 +236,26 @@ def delete_food(request, id):
     return redirect("/food")
 
 # fim food
+
+#kanban - checklist
+
+def kanban(request):
+    tasks = Taskanban.objects.all()
+    return render(request, 'kanban.html', {'tasks': tasks})
+
+def add_task(request):
+    if request.method == 'POST':
+        task_name = request.POST['task']
+        responsible = request.POST['responsible']
+        due_date = request.POST['due-date']
+        task = Taskanban(name=task_name, responsible=responsible, due_date=due_date)
+        task.save()
+    return redirect('recipes:kanban')
+
+def remove_task(request, task_id):
+    task = Taskanban.objects.get(id=task_id)
+    task.delete()
+    return redirect('recipes:kanban')
+
+#kanban - checklist
 

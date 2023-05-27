@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+.navbar {
+    width: 100%;
+    background-color: #C0BFDD;
+    display: flex;
+    
+}
+  
+.navbar a {
+    padding: 12px;
+    color: #000062;
+    text-decoration: none;
+    font-size: 17px;
+}
+  
+  
+.navbar a:hover {
+    background-color: #00006238;
+    transition: 0.5s;
+    border-radius: 10px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.column {
+    width: 300px;
+    background-color: #cfa5f7;
+    border: 1px solid #000000;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.column h2 {
+    text-align: center;
+}
+
+.to-do-list-box {
+    min-height: 150px;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+.task-item {
+    background-color: #fff;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.task-item:hover {
+    background-color: #f2f2f2;
+}

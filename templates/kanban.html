@@ -1,0 +1,75 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/checklist.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="{% static '/kanban.js' %}"></script>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <a class="active" href=" "><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="/login/"><i class="fa fa-fw fa-user"></i> Login</a>
+    </div>
+
+    <div class="title">
+        <a>PETracker</a>
+    </div>
+
+    <div class="content">
+        <div class="column" id="to-do-column">
+            <h2>To Do</h2>
+            <form method="POST" action="{% url 'recipes:add_task' %}">
+                {% csrf_token %}
+                <input type="text" name="task" id="task" placeholder="Nova Tarefa..." />
+                <input type="text" name="responsible" id="responsible" placeholder="Responsável" />
+                <input type="date" name="due-date" id="due-date" placeholder="Data de vencimento " />
+                <input type="submit" value="Add task" />
+            </form>
+
+            <div class="to-do-list-box">
+
+                <ul id="to-do-list" class="task-list">
+                    {% for task in tasks %}
+                    <li id="task-{{ task.id }}" data-id="{{ task.id }}" draggable="true" class="task-item">
+                        {{ task.name }}
+                        <div class="task-responsible">Responsável: {{ task.responsible }}</div>
+                        <div class="task-due-date">Data de vencimento: {{ task.due_date }}</div>
+                        <button onclick="remove_Task({{ task_id }})">X</button>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="column" id="in-progress-column">
+            <h2>In Progress</h2>
+            <div class="to-do-list-box">
+                <ul id="in-progress-list" class="task-list">
+                </ul>
+            </div>
+        </div>
+        <div class="column" id="done-column">
+            <h2>Done</h2>
+            <div class="to-do-list-box">
+                <ul id="done-list" class="task-list">
+                </ul>
+            </div>
+        </div>
+        <div class="column" id="history-column">
+            <h2>History</h2>
+            <ul id="history-list" class="task-list">
+            </ul>
+        </div>
+    </div>
+
+    <script src="{% static '/kanban.js' %}"></script>
+</body>
+
+</html>
