@@ -28,6 +28,35 @@
 
     <h1>home_pet</h1>
 
+    <div class="container-alergies">
+    
+        <div class="card" style="width: 40%;">
+                <div class="card-header">
+                    Alergies
+                </div>
+            </div>
+        {% for alergy in alergies %}
+            
+            <div class="card" style="width: 40%;">
+                <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="{% url 'recipes:alergy_detail' alergy.id %}">{{ alergy.title }}</a> </li>
+                </ul>
+            </div>
+      
+        {% endfor %}
+      
+        <h2>Add Alergy</h2>
+      
+        <form method="post">
+            <table>
+                    {{ form }}
+            </table>
+            {% csrf_token %}
+            <button name="add" type="submit">Add</button>
+        </form>
+      
+      </div>
+
     
 </body>
 </html>

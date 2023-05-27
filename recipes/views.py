@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.utils.safestring import mark_safe
 from recipes.models import Pet, Medicine, Food
-from .forms import MedicineForm, PetForm, FoodForm
+from .forms import AlergyForm, MedicineForm, PetForm, FoodForm
 from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
@@ -79,7 +79,29 @@ def register_pet(request):
 
 @login_required(login_url='recipes:login')
 def pet_home(request):
-    return render(request, "home_pet.html",{"pets": Pet.objects.all()})
+    if request.method == "POST":
+        form = AlergyForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("/home_pet")
+    else:
+        form = AlergyForm()
+    return render(request, 'home_pet.html', 
+                  {"form": form,
+                   "alergies": Alergy.objects.all(),
+                   "pets": Pet.objects.all(),
+                   })
+
+def alergy_detail(request, id):
+    alergy = get_object_or_404(Alergy, pk=id)
+    return render(request, "alergy_detail.html", {"alergy": alergy})
+
+
+def delete_alergy(request, id):
+    alergy = get_object_or_404(Alergy, pk=id)
+    alergy.delete()
+    return redirect("/home_pet")
+  
  
 
 # calendario

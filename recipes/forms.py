@@ -39,7 +39,7 @@ class MedicineForm(ModelForm):
 class AlergyForm(ModelForm):
     class Meta:
         model = Alergy
-        fields =  ['title']
+        fields = ['title']
 
 class FoodForm(ModelForm):
     class Meta:

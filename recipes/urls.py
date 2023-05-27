@@ -19,5 +19,7 @@ urlpatterns = [
     path('food/', views.food, name='food'),
     path('food/<int:id>', views.food_detail, name='food_detail'),
     path('food/delete/<int:id>', views.delete_food, name='delete_food'),
+    path('home_pet/<int:id>', views.alergy_detail, name='alergy_detail'),
+    path('home_pet/delete/<int:id>', views.delete_alergy, name='delete_alergy'),
 
 ]

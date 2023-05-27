@@ -9,21 +9,20 @@
 <body>
 
 {% block content %}
-
-<div class="card" style="width: 18rem;">
+  <div class="card" style="width: 18rem;">
     <div class="card-header">
         Alergy Detail
     </div>
-</div>
+  </div>
 
-<div class="card center" name="alergy" style="width: 18rem;">
+  <div class="card center" style="width: 18rem;">
     <ul class="list-group list-group-flush">
       <li class="list-group-item">{{ alergy.title }}</li>
     </ul>
   </div>
 
   <a href="{% url 'recipes:delete_alergy' alergy.id %}" class="btn btn-danger btn-small">Delete Alergy</a>
-  <a href="{% url 'recipes:home' %}">Home</a>
+  <a href="{% url 'recipes:home_pet' %}">Home</a>
 
 {% endblock %}
 
