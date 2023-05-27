@@ -79,8 +79,6 @@ def register_pet(request):
 
 
 
-
-
 @login_required(login_url='recipes:login')
 def pet_home(request):
     if request.method == "POST":
@@ -109,7 +107,6 @@ def pet_home(request):
                    "background_color": background_color,
                    "pets": Pet.objects.all(),
                     })
-
 
 
 

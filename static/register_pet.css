@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Mont blanc', sans-serif;
+    box-sizing: border-box;
+      
+}
+
+.navbar {
+  width: 100%;
+  background-color: #C0BFDD;
+  display: flex;
+  
+}
+
+.navbar a {
+  padding: 12px;
+  color: #000062;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+.navbar a:hover {
+  background-color: #00006238;
+  transition: 0.5s;
+  border-radius: 10px;
+}
+
+.title{
+    margin-top: 40px;
+    margin-left: 60px;
+    text-align: left;
+    color: #383661;
+    font-size: 70px;
+  }

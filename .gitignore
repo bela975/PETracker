@@ -3,7 +3,6 @@ __pycache__
 db.sqlite3
 .vscode/
 env/
-static/
 *.pyc
 venv
 __pycache__

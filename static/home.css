@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Mont blanc', sans-serif;
+    box-sizing: border-box;
+      
+}
+
+.navbar {
+  width: 100%;
+  background-color: #C0BFDD;
+  display: flex;
+  
+}
+
+.navbar a {
+  padding: 12px;
+  color: #000062;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+.navbar a:hover {
+  background-color: #00006238;
+  transition: 0.5s;
+  border-radius: 10px;
+}
+
+.title{
+    margin-top: 20px;
+    margin-left: 60px;
+    color: #383661;
+    font-size: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 40px; 
+  }
+
+.pets{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 150px;
+  margin: 50px;
+}
+
+.card-body h5 p {
+  text-decoration: none;
+}
+
+.logo-home{
+  width: 300px;
+  height: 300px;
+}
+
+.text-bemvindo{
+  text-align: center;
+  margin-left: 200px;
+}
+
+.button-add{
+  margin-left: 400px;
+}
+
+
+
+
+
+
