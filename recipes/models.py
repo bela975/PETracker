@@ -4,32 +4,36 @@ from django.contrib.auth.models import User
 
 
 class Pet(models.Model):
+    
     name = models.CharField(max_length=100)
     breed = models.CharField(max_length=100)
+    age = models.IntegerField(max_length=20, default= 0)
     description = models.TextField()
     phone = models.CharField(max_length=11)
     email = models.EmailField()
-    begin_date = models.DateTimeField(auto_now_add=True)
-    active = models.BooleanField(default=True)
-    ##photo = models.ImageField(upload_to='pet', blank=True, null=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    photo = models.ImageField(upload_to='images/', blank=True, null=True)
 
-    def __str__(self):
-        return str(self.id)
+
+    def str(self):
+        return f"{self.name}"
     
-    class Meta:
-        db_table = 'pet'
+    
 
+# class OnlineUser(models.Model):
+#     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
-class Task(models.Model):
-    pet = models.ForeignKey(Pet, on_delete=models.CASCADE)
-    task = models.CharField(max_length=200)
-    description = models.CharField(max_length=200, default='No description')
-    completed = models.BooleanField(default=False)
-    due_date = models.DateField()
+# class RegisterPet(models.Model):
+#     online_user = models.OneToOneField(OnlineUser, on_delete=models.CASCADE)
+#     name_pet = models.CharField(max_length=100)
+#     breed = models.CharField(max_length=100)
+#     age = models.FloatField(max_length=20)
+#     description = models.TextField
+#     phone = models.CharField(max_length=100)
+#     email = models.EmailField()
+#     city = models.CharField(max_length=100)
+#     ##photo = models.ImageField(upload_to='pet', blank=True, null=True)
 
-    def __str__(self):
-        return self.task
+# Calendario
 
 class Event(models.Model):
 
@@ -43,12 +47,10 @@ class Event(models.Model):
     def get_html_url(self):
         url = reverse('recipes:event', args=(self.id,))
         return f'<a href="{url}"> {self.title} </a>'
+    
+# fim calendario
 
-class Alergy(models.Model):
-    title = models.CharField(max_length=50)
-    pet = models.ForeignKey(Pet, on_delete=models.CASCADE, default= 0) 
-    def str(self):
-        return f"{self.title}"
+#medicine
 
 class Medicine(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -57,3 +59,27 @@ class Medicine(models.Model):
     resp = models.CharField(max_length=50)
     def str(self):
         return f"{self.med}"
+    
+#fim medicine
+
+# alergy
+
+class Alergy(models.Model):
+    title = models.CharField(max_length=50)
+    pet = models.ForeignKey(Pet, on_delete=models.CASCADE, default= 0) 
+    def str(self):
+        return f"{self.title}"
+
+# fim alergy
+
+# food
+
+class Food(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    food = models.CharField(max_length=50)
+    time = models.DateTimeField(max_length=50)
+    resp = models.CharField(max_length=50)
+    def str(self):
+        return f"{self.food}"
+
+# fim food

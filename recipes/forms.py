@@ -1,17 +1,14 @@
-from django.forms import ModelForm, modelformset_factory, DateInput
-from .models import Task, Alergy, Medicine
+from django.forms import ModelForm
 from django.forms.widgets import DateInput
-from recipes.models import Event
+from recipes.models import Event, Pet
+from .models import Medicine, Alergy, Food
 
-class TaskForm(ModelForm):
+
+class PetForm(ModelForm):
     class Meta:
-        model = Task
-        fields = ['task', 'due_date']
-        widgets = {
-            'due_date': DateInput(attrs={'type': 'date'})
-        }
-
-TaskFormSet = modelformset_factory(Task, form=TaskForm, extra=0)
+        model = Pet
+        fields = ('name', 'breed', 'description', 'phone', 'email', 'photo' )
+        exclude = ['user']
 
 class EventForm(ModelForm):
   class Meta:
@@ -27,11 +24,6 @@ class EventForm(ModelForm):
     self.fields['start_time'].input_formats = ('%Y-%m-%dT%H:%M',)
     self.fields['end_time'].input_formats = ('%Y-%m-%dT%H:%M',)
 
-class AlergyForm(ModelForm):
-    class Meta:
-        model = Alergy
-        fields =  ['title']
-
 
 class MedicineForm(ModelForm):
     class Meta:
@@ -42,4 +34,20 @@ class MedicineForm(ModelForm):
         }
     def __init__(self, *args, **kwargs):
         super(MedicineForm, self).__init__(*args, **kwargs)
+        self.fields['time'].input_formats = ('%Y-%m-%dT%H:%M',)
+
+class AlergyForm(ModelForm):
+    class Meta:
+        model = Alergy
+        fields =  ['title']
+
+class FoodForm(ModelForm):
+    class Meta:
+        model = Food
+        fields = ['food','resp','time']
+        widgets = {
+            'time': DateInput(attrs={'type': 'datetime-local'}, format='%Y-%m-%dT%H:%M'),
+        }
+    def __init__(self, *args, **kwargs):
+        super(FoodForm, self).__init__(*args, **kwargs)
         self.fields['time'].input_formats = ('%Y-%m-%dT%H:%M',)

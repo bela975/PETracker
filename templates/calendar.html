@@ -1,15 +1,13 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Calendar
+Calendar - PETracker (botar navbar aqui)
 {% endblock %}
 
 {% block content %}
 
 
 <div class="clearfix">
-    <a class="btn btn-info left" href="{% url 'recipes:calendar' %}?{{ prev_month }}"> Previous Month </a> 
-    <a class="btn btn-info right" href="{% url 'recipes:calendar' %}?{{ next_month }}"> Next Month </a>
     <a class="btn btn-info right" href="{% url 'recipes:event_new' %}"> New Event </a> 
     <from Event(colorSelected) style = "color = {{ event_color }}">
     <a button class="btn btn-info left" style= "position:absolut; left:185px;" > Event tags: </a>

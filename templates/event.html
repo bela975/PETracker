@@ -45,4 +45,41 @@ Event
 
 </form>
 
+<form id="delete-form">
+</form>
+
+    <button id="delete-button">Deletar Evento</button>
+    <script>
+        function deleteEvent(eventId) {
+   
+          fetch(`/api/events/${eventId}`, {
+            method: 'DELETE'
+          })
+          .then(response => {
+            if (response.ok) {
+              // Evento deletado com sucesso
+              alert('Evento deletado com sucesso!');
+              // Redirecionar para a página do calendário após a deleção
+              window.location.href = '/calendar'; // Substitua com a URL correta do calendário
+            } else {
+              // Ocorreu um erro ao deletar o evento
+              alert('Erro ao deletar o evento. Por favor, tente novamente.');
+            }
+          })
+          .catch(error => {
+            // Ocorreu um erro de conexão ou requisição
+            alert('Erro de conexão. Por favor, verifique sua conexão de internet.');
+          });
+        }
+    
+        // Obter o ID do evento a ser deletado
+        const eventId = {{ event_id }}; // Aqui você deve substituir pelo ID real do evento
+    
+        // Associar o evento de clique do botão à função deleteEvent
+        const deleteButton = document.getElementById('delete-button');
+        deleteButton.addEventListener('click', () => {
+          deleteEvent(eventId);
+        });
+      </script>
+
 {% endblock %}
