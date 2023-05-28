@@ -96,7 +96,8 @@ class Food(models.Model):
 class Taskanban(models.Model):
     name = models.CharField(max_length=255)
     responsible = models.CharField(max_length=255)
+    status = models.CharField(max_length=255,default='to_do')
     due_date = models.DateField()
-    def str(self):
-        return self.name
+    def __str__(self):
+        return f"{self.name} ({self.status})"
 # fim kanban - checklist

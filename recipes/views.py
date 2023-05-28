@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.utils.safestring import mark_safe
 from recipes.models import Pet, Medicine, Food
-from .forms import AlergyForm, BackgroundColorForm, MedicineForm, PetForm, FoodForm, Taskanban
+from .forms import AlergyForm, BackgroundColorForm, MedicineForm, PetForm, FoodForm, Taskanban, TaskanbanForm
 from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
@@ -239,9 +239,11 @@ def delete_food(request, id):
 
 #kanban - checklist
 
-def kanban(request):
-    tasks = Taskanban.objects.all()
-    return render(request, 'kanban.html', {'tasks': tasks})
+def kanban(request, show_history='False'):
+    show_history = show_history == 'True'
+    tasks = Taskanban.objects.filter(status__in=['to_do', 'in_progress', 'done', 'history'])
+    return render(request, 'kanban.html', {'tasks': tasks, 'show_history': show_history})
+
 
 def add_task(request):
     if request.method == 'POST':
@@ -255,7 +257,40 @@ def add_task(request):
 def remove_task(request, task_id):
     task = Taskanban.objects.get(id=task_id)
     task.delete()
-    return redirect('recipes:kanban')
+    return redirect('/kanban')
+
+
+def move_task(request, task_id):
+    print(request)
+    print("View move_task called with task_id:", task_id)
+    task = Taskanban.objects.get(id=task_id)
+    print("Task before update:", task)
+    if task.status == 'to_do':
+        task.status = 'in_progress'
+    elif task.status == 'in_progress':
+        task.status = 'done'
+    elif task.status == 'done':
+        task.status = 'history'
+    task.save()
+    print("Task after update:", task)
+    return redirect('/kanban')
+
+def move_task_back(request, task_id):
+    task = Taskanban.objects.get(id=task_id)
+    if task.status == 'in_progress':
+        task.status = 'to_do'
+    elif task.status == 'done':
+        task.status = 'in_progress'
+    elif task.status == 'history':
+        task.status = 'done'
+    task.save()
+    return redirect('/kanban')
+
+def restore_task(request, task_id):
+    task = Taskanban.objects.get(id=task_id)
+    task.status = 'to_do'
+    task.save()
+    return redirect('/kanban')
 
 #kanban - checklist
 
