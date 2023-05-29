@@ -73,8 +73,8 @@ class Medicine(models.Model):
 # alergy
 
 class Alergy(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
-    pet = models.ForeignKey(Pet, on_delete=models.CASCADE, default= 0) 
     def str(self):
         return f"{self.title}"
 

@@ -78,14 +78,16 @@ def register_pet(request):
     return render(request, 'register_pet.html', {"form":form, "pets": Pet.objects.all()})
 
 
-
 @login_required(login_url='recipes:login')
 def pet_home(request):
     if request.method == "POST":
         alergy_form = AlergyForm(request.POST)
         background_color_form = BackgroundColorForm(request.POST)
+
         if alergy_form.is_valid():
-            alergy_form.save()
+            alergy = alergy_form.save(commit=False)
+            alergy.user = request.user
+            alergy.save()
             return redirect("/home_pet")
         
         if background_color_form.is_valid():
@@ -95,18 +97,19 @@ def pet_home(request):
             return redirect("/home_pet")
     else:
         alergy_form = AlergyForm()
+        alergies = Alergy.objects.filter(user = request.user) if request.user.is_authenticated else []
         background_color_form = BackgroundColorForm()
 
     pet = Pet.objects.first()
     background_color = pet.background_color if pet else '#FFFFFF'
-
+    
     return render(request, 'home_pet.html', 
-                   {"alergy_form": alergy_form,
-                    "alergies": Alergy.objects.all(),
-                   "background_color_form": background_color_form,
-                   "background_color": background_color,
-                   "pets": Pet.objects.all(),
-                    })
+                  {"alergy_form": alergy_form,
+                    "alergies": alergies,
+                    "background_color_form": background_color_form,
+                    "background_color": background_color,
+                    "pets": Pet.objects.all(),
+                   })
 
 
 
