@@ -4,11 +4,11 @@ from . import views
 app_name='recipes'
 urlpatterns = [
     path('',views.login_user, name="login"),
-    path('home_choose_pet', views.home_choose_pet, name="home"),
-    path('logout_user', views.logout_user, name='logout'),
-    path('register_user', views.register_user, name='register_user'),
-    path('register_pet', views.register_pet, name='register_pet'),
-    path('home_pet', views.pet_home, name="home_pet"),
+    path('home_choose_pet/', views.home_choose_pet, name="home"),
+    path('logout_user/', views.logout_user, name='logout'),
+    path('register_user/', views.register_user, name='register_user'),
+    path('register_pet/', views.register_pet, name='register_pet'),
+    path('home_pet/', views.pet_home, name="home_pet"),
     re_path(r'^calendar/$', views.CalendarView.as_view(), name='calendar'),
     re_path(r'^event/new/$', views.event, name='event_new'),
     re_path(r'^event/edit/(?P<event_id>\d+)/$', views.event, name='event'),

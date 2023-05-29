@@ -49,10 +49,10 @@
         <h2>Add Alergy</h2>
       
         <form method="post">
-            <table>
-                    {{ form }}
-            </table>
             {% csrf_token %}
+            <table>
+                    {{ alergy_form.as_p }}
+            </table>
             <button name="add" type="submit">Add</button>
         </form>
       
@@ -62,10 +62,10 @@
       <br>
 
       <form method="post">
+          {% csrf_token %}
         <table>
-          {{ form }}
+          {{ background_color_form.as_p }}
         </table>
-        {% csrf_token %}
         <button name="add" type="submit">Add</button>
     </form>
 
