@@ -8,7 +8,7 @@ class Pet(models.Model):
     
     name = models.CharField(max_length=100)
     breed = models.CharField(max_length=100)
-    age = models.IntegerField(max_length=20, default= 0)
+    age = models.PositiveIntegerField()
     description = models.TextField()
     phone = models.CharField(max_length=11)
     email = models.EmailField()

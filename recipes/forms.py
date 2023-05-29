@@ -8,7 +8,7 @@ from .models import Medicine, Alergy, Food, Taskanban
 class PetForm(ModelForm):
     class Meta:
         model = Pet
-        fields = ('name', 'breed', 'description', 'phone', 'email', 'photo', 'background_color')
+        fields = ('name', 'breed', 'age', 'description', 'phone', 'email', 'photo')
         exclude = ['user']
 
 class BackgroundColorForm(forms.ModelForm):
