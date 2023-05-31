@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.utils.safestring import mark_safe
-from recipes.models import Pet, Medicine, Food
-from .forms import AlergyForm, BackgroundColorForm, MedicineForm, PetForm, FoodForm, Taskanban, TaskanbanForm
+from recipes.models import Pet, Medicine, Food, Todo, Alergy
+from .forms import AlergyForm, BackgroundColorForm, MedicineForm, PetForm, FoodForm,TodoForm, Taskanban, TaskanbanForm
 from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
@@ -185,34 +185,6 @@ def event_color(instance):
     return color
 
 # fim calendario
-
-# medicine
-
-def medicine(request):
-    if request.method == "POST":
-        form = MedicineForm(request.POST)
-        if form.is_valid():
-            medicine = form.save(commit=False)
-            medicine.user = request.user
-            medicine.save()
-            return redirect("/medicine")
-    else:
-        form = MedicineForm()
-        medicines = Medicine.objects.filter(user=request.user) if request.user.is_authenticated else []
-    return render(request, 'medicine.html', {"form": form, "medicines": medicines})
-
-def delete_medicine(request, id):
-    medicine = get_object_or_404(Medicine, pk=id)
-    medicine.delete()
-    return redirect("/medicine")
-
-def medicine_detail(request, id):
-    medicine = get_object_or_404(Medicine, pk=id)
-    return render(request, "medicine_detail.html", {"medicine": medicine})
-
-# fim medicine
-
-
 # food 
 
 def food(request):
@@ -296,4 +268,56 @@ def restore_task(request, task_id):
     return redirect('/kanban')
 
 #kanban - checklist
+
+#inicio medicine page
+def medicine_page(request):
+
+    if request.method == "POST":
+        registro_form = TodoForm(request.POST)
+        form = MedicineForm(request.POST)
+
+        if registro_form.is_valid():
+            todo = registro_form.save(commit=False)
+            todo.user = request.user
+            todo.save()
+            return redirect("/medicine_page")
+        if form.is_valid():
+            medicine = form.save(commit=False)
+            medicine.user = request.user
+            medicine.save()
+            return redirect("/medicine_page")
+    else:
+        registro_form = TodoForm()
+        todos = Todo.objects.filter(user=request.user) if request.user.is_authenticated else []
+        form = MedicineForm()
+        medicines = Medicine.objects.filter(user=request.user) if request.user.is_authenticated else []
+
+        return render(request, 'medicine.html',
+                  {"registro_form": registro_form,
+                   "todos":todos, "form": form,
+                   "medicines": medicines})
+
+# registro do medicine (bela e malu)
+def todo_detail(request, id):
+    todo = get_object_or_404(Todo, pk=id)
+    return render(request, "medicine_detail.html", {"todo": todo})
+
+def delete_todo(request, id):
+    todo = get_object_or_404(Todo, pk=id)
+    todo.delete()
+    return redirect("/medicine_page")
+
+
+# medicine virna
+
+def delete_medicine(request, id):
+    medicine = get_object_or_404(Medicine, pk=id)
+    medicine.delete()
+    return redirect("/medicine_page")
+
+def medicine_detail(request, id):
+    medicine = get_object_or_404(Medicine, pk=id)
+    return render(request, "medicine_detail.html", {"medicine": medicine})
+
+# fim medicine page
 

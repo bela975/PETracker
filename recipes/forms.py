@@ -1,8 +1,8 @@
 from django import forms
 from django.forms import ModelForm
 from django.forms.widgets import DateInput
-from recipes.models import Event, Pet
-from .models import Medicine, Alergy, Food, Taskanban
+from .models import Event, Pet
+from .models import Medicine, Alergy, Food, Taskanban, Todo
 
 
 class PetForm(ModelForm):
@@ -65,3 +65,10 @@ class TaskanbanForm(ModelForm):
         model = Taskanban
         fields = '__all__'
 
+class TodoForm(ModelForm):
+    class Meta:
+        model = Todo
+        fields = ['title','details','time']
+        widgets = {
+            'time': DateInput(attrs={'type': 'datetime-local'}, format='%Y-%m-%dT%H:%M'),
+        }

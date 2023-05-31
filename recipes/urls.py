@@ -1,7 +1,7 @@
 from django.urls import path, re_path
 from . import views 
 
-app_name='recipes'
+app_name = 'recipes'
 urlpatterns = [
     path('',views.login_user, name="login"),
     path('home_choose_pet/', views.home_choose_pet, name="home"),
@@ -13,7 +13,7 @@ urlpatterns = [
     re_path(r'^event/new/$', views.event, name='event_new'),
     re_path(r'^event/edit/(?P<event_id>\d+)/$', views.event, name='event'),
     path('event/delete/<int:event_id>/', views.delete_event, name='delete_event'),
-    path('medicine/', views.medicine, name='medicine'),
+    path('medicine/', views.medicine_page, name='medicine_page'),
     path('medicine/<int:id>', views.medicine_detail, name='medicine_detail'),
     path('medicine/delete/<int:id>', views.delete_medicine, name='delete_medicine'),
     path('food/', views.food, name='food'),
@@ -28,4 +28,7 @@ urlpatterns = [
     path('kanban/<str:show_history>/', views.kanban, name='kanban'),
     path('restore_task/<int:task_id>/', views.restore_task, name='restore_task'),
     path('move_task_back/<int:task_id>/', views.move_task_back, name='move_task_back'),
+    path('todo/', views.medicine_page, name='medicine_plan'),
+    path('todo/<int:id>', views.todo_detail, name='medicine_plan_detail'),
+    path('todo/delete/<int:id>', views.delete_todo, name='delete_medicine_from_plan'),
 ]

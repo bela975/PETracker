@@ -1,7 +1,7 @@
-{% load static %} 
+
 <!DOCTYPE html>
 
-
+{% load static %}
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static '/st.css' %}">
     <link rel="stylesheet" href="{% static '/login.css' %}">
+
     
     <title>PETtracker</title>
 
@@ -19,32 +20,46 @@
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
+
     <div class="navbar">
         <a class="activate" href="/home_pet/"><i class="fa fa-fw fa-arrow-left"></i> Back</a>
         <a href=" {% url 'recipes:login'%} " name="login" ><i class="fa fa-fw fa-user"></i> Login</a>
     </div>
 
-    
-    {% block content %}
-    
-    <h1>Medicine</h1>
-    
+    <h1>Medicine diary:</h1>
+
+
+     <div class="container-1">
+        {% block space %}            {% endblock %}
+         <h2>register a medicine you already gave:</h2>
+
+        <form method="post">
+            <table>
+                {{ form }}
+            </table>
+            {% csrf_token %}
+            <button type="submit">Add to diary</button>
+        </form>
+    </div>
+
+ {% block diary_categories %}
+
     <div class="container text-center">
         <div class="row">
             <div class="col">
-                Remedio
+                Medicine:
             </div>
             <div class="col">
-                Hora
+                Time:
             </div>
             <div class="col">
-                Responsavel
+                Responsible:
             </div>
         </div>
     </div>
-    
+    {% endblock %}
+
     {% for medicine in medicines %}
-    
     <div class="container text-center">
         <div class="row" >
             <div class="col" ><a href="{% url 'recipes:medicine_detail' medicine.id %} " name="med">{{ medicine.med }}</a></div>
@@ -56,26 +71,61 @@
             </div>
         </div>
     </div>
-    
-    
     {% endfor %}
+
+
+    {% block content %}
+    <br>
+    <h1>Medicine plan:</h1>
+
+    {% endblock %}
 
     <div class="container-alergies">
 
-        {% block title %}Create Post{% endblock %}
-        <h2>create a cronogram</h2>
-        
+        {% block space2 %}            {% endblock %}
+        <h2>register your pet's current treatment:</h2>
+
         <form method="post">
             <table>
                 {{ form }}
             </table>
             {% csrf_token %}
-            <button type="submit" name="create">Create</button>
+            <button type="submit" name="create">Add to plan</button>
         </form>
-        
-        {% endblock %} 
-
     </div>
+
+    {% block plan_categories %}
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                Medicine:
+            </div>
+            <div class="col">
+                Details:
+            </div>
+            <div class="col">
+                Times per day:
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+    {% for medicine in medicine_plan %}
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col"><a href="{% url 'recipes:todo_detail' Todo.id %}" >{{ todo.todo }}</a></div>
+            <div class="col" name="Details">
+                {{ todo.details }}
+            </div>
+            <div class="col" name="Times per day">
+                {{ todo.times }}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
     
 </body>
 </html>

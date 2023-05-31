@@ -27,11 +27,9 @@
 
     {% block content %}
     
-    <h1>pet</h1>
+    <h1> Your pet:</h1>
 
-    {% block title %}Create Post{% endblock %}
-    <h2>create a cronogram</h2>
-    
+
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <table>
