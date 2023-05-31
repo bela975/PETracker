@@ -35,7 +35,7 @@
 
         <form method="post">
             <table>
-                {{ form }}
+                {{ medicine_form.as_p }}
             </table>
             {% csrf_token %}
             <button type="submit">Add to diary</button>
@@ -87,7 +87,7 @@
 
         <form method="post">
             <table>
-                {{ form }}
+                {{ registro_form.as_p }}
             </table>
             {% csrf_token %}
             <button type="submit" name="create">Add to plan</button>
@@ -111,20 +111,22 @@
     </div>
     {% endblock %}
 
-    {% for medicine in medicine_plan %}
+    {% for todo in todos %}
 
     <div class="container text-center">
         <div class="row">
-            <div class="col"><a href="{% url 'recipes:todo_detail' Todo.id %}" >{{ todo.todo }}</a></div>
+            <div class="col"><a href="{% url 'recipes:todo_detail' todo.id %}" name = "medicine" >{{ todo.medicine }}</a></div>
             <div class="col" name="Details">
                 {{ todo.details }}
             </div>
             <div class="col" name="Times per day">
-                {{ todo.times }}
+                {{ todo.time_per_day }}
             </div>
         </div>
     </div>
     {% endfor %}
+
+    
 
     
 </body>

@@ -13,9 +13,14 @@ urlpatterns = [
     re_path(r'^event/new/$', views.event, name='event_new'),
     re_path(r'^event/edit/(?P<event_id>\d+)/$', views.event, name='event'),
     path('event/delete/<int:event_id>/', views.delete_event, name='delete_event'),
+
     path('medicine/', views.medicine_page, name='medicine_page'),
     path('medicine/<int:id>', views.medicine_detail, name='medicine_detail'),
     path('medicine/delete/<int:id>', views.delete_medicine, name='delete_medicine'),
+
+    path('todo/<int:id>', views.todo_detail, name='todo_detail'),
+    path('todo/delete/<int:id>', views.delete_todo, name='delete_todo'),
+
     path('food/', views.food, name='food'),
     path('food/<int:id>', views.food_detail, name='food_detail'),
     path('food/delete/<int:id>', views.delete_food, name='delete_food'),
@@ -28,7 +33,8 @@ urlpatterns = [
     path('kanban/<str:show_history>/', views.kanban, name='kanban'),
     path('restore_task/<int:task_id>/', views.restore_task, name='restore_task'),
     path('move_task_back/<int:task_id>/', views.move_task_back, name='move_task_back'),
-    path('todo/', views.medicine_page, name='medicine_plan'),
-    path('todo/<int:id>', views.todo_detail, name='medicine_plan_detail'),
-    path('todo/delete/<int:id>', views.delete_todo, name='delete_medicine_from_plan'),
+
+    #path('todo/', views.medicine_page, name='medicine_plan'),
+    #path('todo/<int:id>', views.todo_detail, name='medicine_plan_detail'),
+    #path('todo/delete/<int:id>', views.delete_todo, name='delete_medicine_from_plan'),
 ]

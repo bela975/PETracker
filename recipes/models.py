@@ -105,9 +105,9 @@ class Taskanban(models.Model):
 
 class Todo(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    title = models.CharField(max_length=100)
+    medicine = models.CharField(max_length=100)
     details = models.TextField()
-    time = models.CharField(max_length=50)
+    time_per_day = models.CharField(max_length=50)
 
     def __str__(self):
         return f"{self.title}"

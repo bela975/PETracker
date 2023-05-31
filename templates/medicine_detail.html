@@ -27,7 +27,7 @@
     
     <br>
 
-    {% block content %}
+{% block content %}
     
     <h1>Medicine Details</h1>
     
@@ -36,13 +36,13 @@
     <div class="container text-center">
         <div class="row">
             <div class="col">
-                Remedio
+                Medicine:
             </div>
             <div class="col">
-                Hora
+                Time:
             </div>
             <div class="col">
-                Responsavel
+                Responsible:
             </div>
         </div>
     </div>
@@ -63,48 +63,9 @@
     </div>
     <br>
     
-    <a href="{% url 'recipes:delete_medicine' medicine.id %}" class="btn btn-danger btn-small" name="delete">Delete Medicine</a>
+    <a href="{% url 'recipes:delete_medicine' medicine.id %}" class="btn btn-danger btn-small" > Delete Medicine </a>
+
     {% endblock %}
-
-    {% block detail %}
-
-    <h1>Medicine Details</h1>
-
-    <br>
-
-    <div class="container text-center">
-        <div class="row">
-            <div class="col">
-                Medicine:
-            </div>
-            <div class="col">
-                details:
-            </div>
-            <div class="col">
-                times a day:
-            </div>
-        </div>
-    </div>
-
-
-    <div class="container text-center">
-        <div class="row">
-            <div class="col">
-                {{ todo.title }}
-            </div>
-            <div class="col">
-                {{ todo.details }}
-            </div>
-            <div class="col">
-                {{ todo.time }}
-            </div>
-        </div>
-    </div>
-    <br>
-
-    <a href="{% url 'recipes:delete_todo' todo.id %}" class="btn btn-danger btn-small">Delete medicine?</a>
-
-{% endblock %}
     
 </body>
 </html>

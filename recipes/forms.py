@@ -68,7 +68,5 @@ class TaskanbanForm(ModelForm):
 class TodoForm(ModelForm):
     class Meta:
         model = Todo
-        fields = ['title','details','time']
-        widgets = {
-            'time': DateInput(attrs={'type': 'datetime-local'}, format='%Y-%m-%dT%H:%M'),
-        }
+        fields = ['medicine','details','time_per_day']
+        

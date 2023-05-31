@@ -274,38 +274,38 @@ def medicine_page(request):
 
     if request.method == "POST":
         registro_form = TodoForm(request.POST)
-        form = MedicineForm(request.POST)
+        medicine_form = MedicineForm(request.POST)
 
         if registro_form.is_valid():
             todo = registro_form.save(commit=False)
             todo.user = request.user
             todo.save()
-            return redirect("/medicine_page")
-        if form.is_valid():
-            medicine = form.save(commit=False)
+            return redirect("/medicine")
+        if medicine_form.is_valid():
+            medicine = medicine_form.save(commit=False)
             medicine.user = request.user
             medicine.save()
-            return redirect("/medicine_page")
+            return redirect("/medicine")
     else:
         registro_form = TodoForm()
         todos = Todo.objects.filter(user=request.user) if request.user.is_authenticated else []
-        form = MedicineForm()
+        medicine_form = MedicineForm()
         medicines = Medicine.objects.filter(user=request.user) if request.user.is_authenticated else []
 
         return render(request, 'medicine.html',
                   {"registro_form": registro_form,
-                   "todos":todos, "form": form,
+                   "todos":todos, "medicine_form": medicine_form,
                    "medicines": medicines})
 
 # registro do medicine (bela e malu)
 def todo_detail(request, id):
     todo = get_object_or_404(Todo, pk=id)
-    return render(request, "medicine_detail.html", {"todo": todo})
+    return render(request, "todo_details.html", {"todo": todo})
 
 def delete_todo(request, id):
     todo = get_object_or_404(Todo, pk=id)
     todo.delete()
-    return redirect("/medicine_page")
+    return redirect("/medicine")
 
 
 # medicine virna
@@ -313,7 +313,7 @@ def delete_todo(request, id):
 def delete_medicine(request, id):
     medicine = get_object_or_404(Medicine, pk=id)
     medicine.delete()
-    return redirect("/medicine_page")
+    return redirect("/medicine")
 
 def medicine_detail(request, id):
     medicine = get_object_or_404(Medicine, pk=id)
