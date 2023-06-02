@@ -18,6 +18,16 @@
         <a href="{% url 'login'%}"><i class="fa fa-fw fa-user"></i> Login</a>
     </div>
 
+    <div> 
+        {% for message in messages %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Error! </strong>{{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endfor %} 
+    </div>
+   
+
     <div class="container-login">
             <div class="logo">
                 <img src="https://raw.githubusercontent.com/bela975/PETracker/33735714a052b92ac15696326f3b398ce1924b49/img/petracker_logo.png" alt="logo">
@@ -45,25 +55,15 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <input type="submit" value="submit">
+                        <input type="submit" value="Login">
                     </a>
                 </form>
-                <p>Don't have an account? <a href="{% url 'recipes:register_user' %}" class="a2">Sign up!</a></p>
+                <p>Don't have an account? <a href="{% url 'recipes:register_user' %}" class="a2">Sign up here!</a></p>
             </div>
         </div>
     </div>
 
     {% comment %} fazer div para centralizar css {% endcomment %}
-    <div> 
-        {% for message in messages %}
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>Error!</strong>{{ message }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
-        {% endfor %} 
-    </div>
-   
-
     
 </body>
 </html> 

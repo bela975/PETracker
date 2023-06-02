@@ -25,9 +25,9 @@
             <h2>To Do</h2>
             <form method="POST" action="{% url 'recipes:add_task' %}">
                 {% csrf_token %}
-                <input type="text" name="task" id="task" placeholder="Nova Tarefa..." />
-                <input type="text" name="responsible" id="responsible" placeholder="Responsável" />
-                <input type="date" name="due-date" id="due-date" placeholder="Data de vencimento " />
+                <input type="text" name="task" id="task" placeholder="New Task" />
+                <input type="text" name="responsible" id="responsible" placeholder="Responsible" />
+                <input type="date" name="due-date" id="due-date" placeholder="Due Date" />
                 <input type="submit" value="Add task" />
             </form>
 
@@ -38,8 +38,8 @@
                         {% if task.status == 'to_do' %}
                             <li id="task-{{ task.id }}" data-id="{{ task.id }}" class="task-item">
                                 {{ task.name }}
-                                <div class="task-responsible">Responsável: {{ task.responsible }}</div>
-                                <div class="task-due-date">Data de vencimento: {{ task.due_date }}</div>
+                                <div class="task-responsible">Responsible: {{ task.responsible }}</div>
+                                <div class="task-due-date">Due Date: {{ task.due_date }}</div>
                                 <a href="{% url 'recipes:move_task' task.id %}">➡</a>
                                 <a href="{% url 'recipes:remove_task' task.id %}">❌</a>
                             </li>
@@ -56,8 +56,8 @@
                         {% if task.status == 'in_progress' %}
                             <li id="task-{{ task.id }}" data-id="{{ task.id }}" class="task-item">
                                 {{ task.name }}
-                                <div class="task-responsible">Responsável: {{ task.responsible }}</div>
-                                <div class="task-due-date">Data de vencimento: {{ task.due_date }}</div>
+                                <div class="task-responsible">Responsible: {{ task.responsible }}</div>
+                                <div class="task-due-date">Due Date: {{ task.due_date }}</div>
                                 <a href="{% url 'recipes:move_task_back' task.id %}">⬅️</a>
                                 <a href="{% url 'recipes:move_task' task.id %}">➡</a>
                                 <a href="{% url 'recipes:remove_task' task.id %}">❌</a>
@@ -75,8 +75,8 @@
                         {% if task.status == 'done' %}
                             <li id="task-{{ task.id }}" data-id="{{ task.id }}" class="task-item">
                                 {{ task.name }}
-                                <div class="task-responsible">Responsável: {{ task.responsible }}</div>
-                                <div class="task-due-date">Data de vencimento: {{ task.due_date }}</div>
+                                <div class="task-responsible">Responsible: {{ task.responsible }}</div>
+                                <div class="task-due-date">Due Date: {{ task.due_date }}</div>
                                 <a href="{% url 'recipes:move_task_back' task.id %}">⬅️</a>
                                 <a href="{% url 'recipes:move_task' task.id %}">➡</a>
                                 <a href="{% url 'recipes:remove_task' task.id %}">❌</a>
@@ -89,14 +89,14 @@
         <div class="column" id="history-column">
             <h2>History</h2>
             {% if show_history %}
-                <a href="{% url 'recipes:kanban' 'False' %}">Ocultar</a>
+                <a href="{% url 'recipes:kanban' 'False' %}">Hide</a>
                 <ul id="history-list" class="task-list">
                     {% for task in tasks %}
                         {% if task.status == 'history' %}
                             <li id="task-{{ task.id }}" data-id="{{ task.id }}" class="task-item">
                                 {{ task.name }}
-                                <div class="task-responsible">Responsável: {{ task.responsible }}</div>
-                                <div class="task-due-date">Data de vencimento: {{ task.due_date }}</div>
+                                <div class="task-responsible">Responsible: {{ task.responsible }}</div>
+                                <div class="task-due-date">Due Date: {{ task.due_date }}</div>
                                 <a href="{% url 'recipes:restore_task' task.id %}"> 🔄</a>
                                 <a href="{% url 'recipes:remove_task' task.id %}">❌</a>
                             </li>
@@ -104,7 +104,7 @@
                     {% endfor %}
                 </ul>
             {% else %}
-                <a href="{% url 'recipes:kanban' 'True' %}">Mostrar</a>
+                <a href="{% url 'recipes:kanban' 'True' %}">Show</a>
             {% endif %}
         </div>
     </div>

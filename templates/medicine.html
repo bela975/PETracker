@@ -26,12 +26,12 @@
         <a href=" {% url 'recipes:login'%} " name="login" ><i class="fa fa-fw fa-user"></i> Login</a>
     </div>
 
-    <h1>Medicine diary:</h1>
+    <h1>Medicine Diary</h1>
 
 
      <div class="container-1">
         {% block space %}            {% endblock %}
-         <h2>register a medicine you already gave:</h2>
+         <h2>Register a Medicine You Already Gave:</h2>
 
         <form method="post">
             <table>
@@ -75,15 +75,18 @@
 
 
     {% block content %}
+
     <br>
-    <h1>Medicine plan:</h1>
+    <br>
+
+    <h1>Medicine Plan</h1>
 
     {% endblock %}
 
     <div class="container-alergies">
 
         {% block space2 %}            {% endblock %}
-        <h2>register your pet's current treatment:</h2>
+        <h2>Register Your Pet's Current Treatment:</h2>
 
         <form method="post">
             <table>
@@ -110,6 +113,7 @@
         </div>
     </div>
     {% endblock %}
+
 
     {% for todo in todos %}
 
