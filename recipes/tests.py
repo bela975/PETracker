@@ -3,14 +3,17 @@ from .selPath import SELENIUM_DIRS
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
 import time
 
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--no-sandbox")
-# chrome_options.add_argument("--headless")
+# chrome_options.add_argument("--headless") #sera usado no actions
 chrome_options.add_argument("--disable-gpu")
 driver = webdriver.Chrome(options=chrome_options)
+driver.maximize_window()
 
 class petracker_tests(TestCase):
     def test(self):
@@ -109,10 +112,104 @@ class petracker_tests(TestCase):
         calendar_nav_button.click()
         new_event_button = driver.find_element(By.NAME, "button_new_event")
         new_event_button.click()
+        event_title = driver.find_element(By.ID, "id_title")
+        event_title.send_keys("Walk to The Park With Peter Porker")
+        event_description = driver.find_element(By.ID, "id_description")
+        event_description.send_keys("He needs to check if any super vilain is trying to commit crimes. Thanos can be there. Who knows? He's inevitable!")
+        event_start_time = driver.find_element(By.ID, "id_start_time")
+        event_start_time.send_keys("13062023")
+        event_start_time.send_keys(Keys.TAB)
+        event_start_time.send_keys("1620")
+        event_end_time = driver.find_element(By.ID, "id_end_time")
+        event_end_time.send_keys("13062023")
+        event_end_time.send_keys(Keys.TAB)
+        event_end_time.send_keys("2007")
+        event_color_select = driver.find_element(By.ID, "id_colorSelected")
+        event_color_select.send_keys("purple")
+        event_save_button = driver.find_element(By.ID, "save-event")
+        time.sleep(1)
+        event_save_button.click()
+        time.sleep(1)
+        #falta terminar esse, mas n faço ideia de como
+        back_button = driver.find_element(By.ID, "back_button")
+        back_button.click()
+        time.sleep(1)
+
+    def checklist(self, driver):
+        checklist_nav_button = driver.find_element(By.ID, "kanban") 
+        checklist_nav_button.click()
+        new_task = driver.find_element(By.ID, "task")
+        new_task.send_keys("Defeat Thanos")
+        new_task_responsible = driver.find_element(By.ID, "responsible")
+        new_task_responsible.send_keys("Peter Porker")
+        new_task_due_date = driver.find_element(By.ID, "due-date")
+        new_task_due_date.send_keys(13062023)
+        add_task_button = driver.find_element(By.ID, "add-task")
+        add_task_button.click()
+        
+        move_task_r = driver.find_element(By.ID, "right-td-btn")
+        move_task_r.click()
+        time.sleep(1)
+        
+        move_task_r2 = driver.find_element(By.ID, "right-ip-btn")
+        move_task_r2.click()
+        time.sleep(1)
+        move_task_l = driver.find_element(By.ID, "left-d-btn")
+        move_task_l.click()
+        time.sleep(1)
+        move_task_r2 = driver.find_element(By.ID, "right-ip-btn")
+        move_task_r2.click()
+        time.sleep(1)
+        move_task_r3 = driver.find_element(By.ID, "right-d-btn")
+        move_task_r3.click()
+        time.sleep(1)
+        show_history = driver.find_element(By.ID, "show")
+        show_history.click()
+        time.sleep(1)
+        hide_history = driver.find_element(By.ID, "hide")
+        hide_history.click()
+        time.sleep(1)
+        show_history = driver.find_element(By.ID, "show")
+        show_history.click()
+        time.sleep(1)
+        redo_task = driver.find_element(By.ID, "restore-h-btn")
+        redo_task.click()
+        time.sleep(1)
+        delete_task = driver.find_element(By.ID, "delete-td-btn")
+        delete_task.click()
+        time.sleep(1)
+        
+        back_button = driver.find_element(By.ID, "back_button")
+        back_button.click()
+        time.sleep(2)
+
+    def medicine(self, driver):
+        medicine_nav_button = driver.find_element(By.ID, "medicine")
+        medicine_nav_button.click()
+
+        plan_medicine = driver.find_element(By.ID, "id_medicine")
+        plan_medicine.send_keys("Zolmitriptan")
+        plan_details = driver.find_element(By.ID, "id_details")
+        plan_details.send_keys("After defeating Thanos, Peter got sick. Since Porker is alergic to Tylenol, he'll take Zolmitriptan's pills for 3 days instead")
+        plan_times_per_day = driver.find_element(By.ID, "id_time_per_day")
+        plan_times_per_day.send_keys("1")
+        time.sleep(1)
+        plan_add_button = driver.find_element(By.ID, "add-plan")
+        plan_add_button.click()
+        time.sleep(1)
+        driver.find_element(By.ID, "mpd").click()
+        time.sleep(1)
+        driver.find_element(By.ID, "back_button").click()
         time.sleep(3)
+        driver.find_element(By.ID, "mpd").click()
+        time.sleep(1)
+        delete_med_plan = driver.find_element(By.ID, "del-med-plan")
+        delete_med_plan.click()
+        time.sleep(1)
 
         driver.quit()
 
+        #shift + tab volta a linha
 
     def run_tests(self, driver):
         self.register(driver)
@@ -122,6 +219,8 @@ class petracker_tests(TestCase):
         self.alergy(driver)
         self.background_color(driver)
         self.calendar(driver)
+        self.checklist(driver)
+        self.medicine(driver)
 # register
 # login
 # create pet

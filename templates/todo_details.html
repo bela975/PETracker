@@ -25,7 +25,7 @@
         crossorigin="anonymous"></script>
 
     <div class="navbar">
-        <a class="activate" href="/medicine/"><i class="fa fa-fw fa-arrow-left"></i> Back</a>
+        <a id="back_button" class="activate" href="/medicine/"><i class="fa fa-fw fa-arrow-left"></i> Back</a>
         <a href="{% url 'recipes:login'%}"><i class="fa fa-fw fa-user"></i> Login</a>
     </div>
 
@@ -67,6 +67,6 @@
     </div>
     <br>
 
-    <a href="{% url 'recipes:delete_todo' todo.id %}" class="btn btn-danger btn-small"> Delete Medicine </a>
+    <a id="del-med-plan" href="{% url 'recipes:delete_todo' todo.id %}" class="btn btn-danger btn-small"> Delete Medicine </a>
 
     {% endblock %}

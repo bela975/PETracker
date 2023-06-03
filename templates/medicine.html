@@ -42,7 +42,7 @@
                 {{ medicine_form.as_p }}
             </table>
             {% csrf_token %}
-            <button type="submit">Add to diary</button>
+            <button id="add-medicine-diary" type="submit">Add to diary</button>
         </form>
     </div>
 
@@ -98,7 +98,7 @@
                 {{ registro_form.as_p }}
             </table>
             {% csrf_token %}
-            <button type="submit" name="create">Add to plan</button>
+            <button id="add-plan" type="submit" name="create">Add to plan</button>
         </form>
     </div>
 
@@ -124,7 +124,7 @@
 
     <div class="container text-center">
         <div class="row">
-            <div class="col"><a href="{% url 'recipes:todo_detail' todo.id %}" name="medicine">{{ todo.medicine }}</a>
+            <div class="col"><a id="mpd" href="{% url 'recipes:todo_detail' todo.id %}" name="medicine">{{ todo.medicine }}</a>
             </div>
             <div class="col" name="Details">
                 {{ todo.details }}

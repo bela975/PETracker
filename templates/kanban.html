@@ -15,7 +15,7 @@
 <body>
 
     <div class="navbar">
-        <a class="activate" href="/home_pet/"><i class="fa fa-fw fa-arrow-left"></i> Back</a>
+        <a id="back_button" class="activate" href="/home_pet/"><i class="fa fa-fw fa-arrow-left"></i> Back</a>
         <a href="/login/"><i class="fa fa-fw fa-user"></i> Login</a>
     </div>
 
@@ -29,7 +29,7 @@
                 <input type="text" name="task" id="task" placeholder="New Task" />
                 <input type="text" name="responsible" id="responsible" placeholder="Responsible" />
                 <input type="date" name="due-date" id="due-date" placeholder="Due Date" />
-                <input type="submit" value="Add task" />
+                <input type="submit" value="Add task" id="add-task" />
             </form>
 
             <div class="to-do-list-box">
@@ -41,8 +41,8 @@
                         {{ task.name }}
                         <div class="task-responsible">Responsible: {{ task.responsible }}</div>
                         <div class="task-due-date">Due Date: {{ task.due_date }}</div>
-                        <a href="{% url 'recipes:move_task' task.id %}">➡</a>
-                        <a href="{% url 'recipes:remove_task' task.id %}">❌</a>
+                        <a id="right-td-btn" href="{% url 'recipes:move_task' task.id %}">➡</a>
+                        <a id="delete-td-btn" href="{% url 'recipes:remove_task' task.id %}">❌</a>
                     </li>
                     {% endif %}
                     {% endfor %}
@@ -59,9 +59,9 @@
                         {{ task.name }}
                         <div class="task-responsible">Responsible: {{ task.responsible }}</div>
                         <div class="task-due-date">Due Date: {{ task.due_date }}</div>
-                        <a href="{% url 'recipes:move_task_back' task.id %}">⬅️</a>
-                        <a href="{% url 'recipes:move_task' task.id %}">➡</a>
-                        <a href="{% url 'recipes:remove_task' task.id %}">❌</a>
+                        <a id="left-ip-btn" href="{% url 'recipes:move_task_back' task.id %}">⬅️</a>
+                        <a id="right-ip-btn" href="{% url 'recipes:move_task' task.id %}">➡</a>
+                        <a id="delete-ip-btn" href="{% url 'recipes:remove_task' task.id %}">❌</a>
                     </li>
                     {% endif %}
                     {% endfor %}
@@ -78,9 +78,9 @@
                         {{ task.name }}
                         <div class="task-responsible">Responsible: {{ task.responsible }}</div>
                         <div class="task-due-date">Due Date: {{ task.due_date }}</div>
-                        <a href="{% url 'recipes:move_task_back' task.id %}">⬅️</a>
-                        <a href="{% url 'recipes:move_task' task.id %}">➡</a>
-                        <a href="{% url 'recipes:remove_task' task.id %}">❌</a>
+                        <a id="left-d-btn" href="{% url 'recipes:move_task_back' task.id %}">⬅️</a>
+                        <a id="right-d-btn" href="{% url 'recipes:move_task' task.id %}">➡</a>
+                        <a id="delete-d-btn" href="{% url 'recipes:remove_task' task.id %}">❌</a>
                     </li>
                     {% endif %}
                     {% endfor %}
@@ -90,7 +90,7 @@
         <div class="column" id="history-column">
             <h2>History</h2>
             {% if show_history %}
-            <a href="{% url 'recipes:kanban' 'False' %}">Hide</a>
+            <a id="hide" href="{% url 'recipes:kanban' 'False' %}">Hide</a>
             <ul id="history-list" class="task-list">
                 {% for task in tasks %}
                 {% if task.status == 'history' %}
@@ -98,14 +98,14 @@
                     {{ task.name }}
                     <div class="task-responsible">Responsible: {{ task.responsible }}</div>
                     <div class="task-due-date">Due Date: {{ task.due_date }}</div>
-                    <a href="{% url 'recipes:restore_task' task.id %}"> 🔄</a>
-                    <a href="{% url 'recipes:remove_task' task.id %}">❌</a>
+                    <a id="restore-h-btn" href="{% url 'recipes:restore_task' task.id %}"> 🔄</a>
+                    <a id="delete-h-btn" href="{% url 'recipes:remove_task' task.id %}">❌</a>
                 </li>
                 {% endif %}
                 {% endfor %}
             </ul>
             {% else %}
-            <a href="{% url 'recipes:kanban' 'True' %}">Show</a>
+            <a id="show" href="{% url 'recipes:kanban' 'True' %}">Show</a>
             {% endif %}
         </div>
     </div>
