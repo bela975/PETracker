@@ -1,64 +1,70 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static '/register_user.css' %}">
     <title> Register User!</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+
     <div class="navbar">
-        <a  href="{% url 'recipes:login'%}"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="{% url 'recipes:login'%}"><i class="fa fa-fw fa-home"></i> Home</a>
         <a href="{% url 'recipes:login'%}"><i class="fa fa-fw fa-user"></i> Login</a>
     </div>
 
     <div class="container-login">
-            <div class="logo">
-                <img src="https://raw.githubusercontent.com/bela975/PETracker/33735714a052b92ac15696326f3b398ce1924b49/img/petracker_logo.png" alt="logo">
-            </div>
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/bela975/PETracker/33735714a052b92ac15696326f3b398ce1924b49/img/petracker_logo.png"
+                alt="logo">
+        </div>
 
-            <div class="login-box">
-                <p>Register</p>
-                <form action ="{% url 'recipes:register_user' %}" method="POST">
-                    {% csrf_token %}
+        <div class="login-box">
+            <p>Register</p>
+            <form action="{% url 'recipes:register_user' %}" method="POST">
+                {% csrf_token %}
 
-                    <div class="user-box">
-                        <input type="text" name="username" required>
-                        <label>Name</label>
+                <div class="user-box">
+                    <input type="text" name="username" required>
+                    <label>Name</label>
+                </div>
+
+                <div class="user-box">
+                    <input type="email" name="email" required>
+                    <label>Email</label>
+                    <div class="invalid-feedback">
+                        Please enter your email address
                     </div>
-                        
-                    <div class="user-box">
-                        <input  type="email" name="email" required>
-                        <label>Email</label>
-                        <div class="invalid-feedback">
-                            Please enter your email address
-                        </div>
+                </div>
+                <div class="user-box">
+                    <input type="password" name="password" required>
+                    <label>Password</label>
+                    <div class="invalid-feedback">
+                        Please enter your password
                     </div>
-                    <div class="user-box">
-                        <input type="password" name="password" required>
-                        <label>Password</label>
-                        <div class="invalid-feedback">
-                            Please enter your password
-                        </div>
-                    </div>
-                    <a href="#">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <input type="submit" value="Register" name="register">
-                    </a>
-                </form>
-            </div>
+                </div>
+                <a href="#">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <input type="submit" value="Register" name="register">
+                </a>
+            </form>
         </div>
     </div>
 
-    
+
 </body>
+
 </html>

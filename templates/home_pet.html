@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static '/home_pet.css' %}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Home Pet</title>
 </head>
+
 <body style="background-color: {{ background_color }}">
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
     <div class="navbar">
-        <a  href="{% url 'recipes:home'%}"><i class="fa fa-fw fa-paw"></i> Choose Pet</a>
-        <a href="{% url 'recipes:calendar' %}"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
-        <a href="{% url 'recipes:kanban' %}"><i class="fa fa-fw fa-table"></i> CheckList</a>
-        <a href="{% url 'recipes:medicine_page' %}"><i class="fa fa-fw fa-medkit"></i> Medicine</a>
-        <a href="{% url 'recipes:food' %}"><i class="fa fa-fw fa-spoon"></i> Food</a>
+        <a id="choose_pet" href="{% url 'recipes:home'%}"><i class="fa fa-fw fa-paw"></i> Choose Pet</a>
+        <a id="calendar" href="{% url 'recipes:calendar' %}"><i class="fa fa-fw fa-calendar"></i> Calendar</a>
+        <a id="kanban" href="{% url 'recipes:kanban' %}"><i class="fa fa-fw fa-table"></i> CheckList</a>
+        <a id="medicine" href="{% url 'recipes:medicine_page' %}"><i class="fa fa-fw fa-medkit"></i> Medicine</a>
+        <a id="food" href="{% url 'recipes:food' %}"><i class="fa fa-fw fa-spoon"></i> Food</a>
         {% if user.is_authenticated %}
-        <a href="{% url 'recipes:login' %}" class="fa fa-sign-out" >Logout</a>
+        <a id="Logout" href="{% url 'recipes:login' %}" class="fa fa-sign-out">Logout</a>
         {% else %}
         {% endif %}
     </div>
@@ -29,34 +34,35 @@
     <h1>home_pet</h1>
 
     <div class="container-alergies">
-    
+
         <div class="card" style="width: 40%;">
-                <div class="card-header">
-                    Alergies
-                </div>
+            <div class="card-header">
+                Alergies
             </div>
+        </div>
         {% for alergy in alergies %}
-            
-            <div class="card" style="width: 40%;">
-                <ul class="list-group list-group-flush">
-                <li class="list-group-item"><a href="{% url 'recipes:alergy_detail' alergy.id %}">{{ alergy.title }}</a> </li>
-                </ul>
-            </div>
-      
+
+        <div class="card" style="width: 40%;">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a id="ab" href="{% url 'recipes:alergy_detail' alergy.id %}">{{ alergy.title }}</a>
+                </li>
+            </ul>
+        </div>
+
         {% endfor %}
-      
+
         <br>
 
         <h2>Add Alergy</h2>
-      
+
         <form method="post">
             {% csrf_token %}
             <table>
-            {{ alergy_form.as_p }}
+                {{ alergy_form.as_p }}
             </table>
             <button name="add" type="submit">Add</button>
         </form>
-      
+
     </div>
     <br>
     <br>
@@ -67,8 +73,9 @@
         <table>
             {{ background_color_form.as_p }}
         </table>
-      <button name="add" type="submit">Add</button>
-    </form> 
-    
+        <button name="add_color" type="submit">Add</button>
+    </form>
+
 </body>
+
 </html>

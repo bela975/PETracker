@@ -10,18 +10,18 @@ Event
 </div>
 
 {% if form.errors %}
-    {% for field in form %}
-        {% for error in field.errors %}
-            <div class="alert alert-danger">
-                {{ field.label }} <strong>{{ error|escape }}</strong>
-            </div>
-        {% endfor %}
-    {% endfor %}
-    {% for error in form.non_field_errors %}
-        <div class="alert alert-danger">
-            {{ field.label }} <strong>{{ error|escape }}</strong>
-        </div>
-    {% endfor %}
+{% for field in form %}
+{% for error in field.errors %}
+<div class="alert alert-danger">
+  {{ field.label }} <strong>{{ error|escape }}</strong>
+</div>
+{% endfor %}
+{% endfor %}
+{% for error in form.non_field_errors %}
+<div class="alert alert-danger">
+  {{ field.label }} <strong>{{ error|escape }}</strong>
+</div>
+{% endfor %}
 {% endif %}
 
 <form method="post" style="background-color: {{ event_color }}">
@@ -29,18 +29,21 @@ Event
   {% csrf_token %}
   <table class="form form-table">
     {{ form }}
-    <a button class="btn btn-info left" style= "position:absolut; left:20px; background-color: white"> Possible tags: </a>
-    <a button class="btn btn-info left" style= "position:absolut; left:145px; background-color: #978DCC"> Walks </a>
-    <a button class="btn btn-info left" style= "position:absolut; left:210px; background-color: #FAA42B"> Meet Ups </a>
-    <a button class="btn btn-info left" style= "position:absolut; left:295px; background-color: #4FD881"> Vet </a> 
-    <a button class="btn btn-info left" style= "position:absolut; left:340px; background-color: #00B7D9"> Others </a>
+    <a button class="btn btn-info left" style="position:absolut; left:20px; background-color: white"> Possible tags:
+    </a>
+    <a button class="btn btn-info left" style="position:absolut; left:145px; background-color: #978DCC"> Walks </a>
+    <a button class="btn btn-info left" style="position:absolut; left:210px; background-color: #FAA42B"> Meet Ups </a>
+    <a button class="btn btn-info left" style="position:absolut; left:295px; background-color: #4FD881"> Vet </a>
+    <a button class="btn btn-info left" style="position:absolut; left:340px; background-color: #00B7D9"> Others </a>
 
-    <tr><td colspan="2"><button type="submit" class="btn btn-info right"> Submit </button></td></tr>
+    <tr>
+      <td colspan="2"><button type="submit" class="btn btn-info right"> Submit </button></td>
+    </tr>
 
 
 
 
-    {% comment %} <a href="{% url 'recipes:event_delete' event.id %}" class="btn btn-danger btn-small">Delete</a> {% endcomment %}
+    {% comment %} <a href="{% url 'recipes:event_delete' event.id %}" class="btn btn-danger btn-small">Delete</a> {%endcomment %}
 
 
 </form>
@@ -48,38 +51,38 @@ Event
 <form id="delete-form">
 </form>
 
-    <button id="delete-button">Deletar Evento</button>
-    <script>
-        function deleteEvent(eventId) {
-   
-          fetch(`/api/events/${eventId}`, {
-            method: 'DELETE'
-          })
-          .then(response => {
-            if (response.ok) {
-              // Evento deletado com sucesso
-              alert('Evento deletado com sucesso!');
-              // Redirecionar para a página do calendário após a deleção
-              window.location.href = '/calendar'; // Substitua com a URL correta do calendário
-            } else {
-              // Ocorreu um erro ao deletar o evento
-              alert('Erro ao deletar o evento. Por favor, tente novamente.');
-            }
-          })
-          .catch(error => {
-            // Ocorreu um erro de conexão ou requisição
-            alert('Erro de conexão. Por favor, verifique sua conexão de internet.');
-          });
+<button id="delete-button">Deletar Evento</button>
+<script>
+  function deleteEvent(eventId) {
+
+    fetch(`/api/events/${eventId}`, {
+      method: 'DELETE'
+    })
+      .then(response => {
+        if (response.ok) {
+          // Evento deletado com sucesso
+          alert('Evento deletado com sucesso!');
+          // Redirecionar para a página do calendário após a deleção
+          window.location.href = '/calendar'; // Substitua com a URL correta do calendário
+        } else {
+          // Ocorreu um erro ao deletar o evento
+          alert('Erro ao deletar o evento. Por favor, tente novamente.');
         }
-    
-        // Obter o ID do evento a ser deletado
-        const eventId = {{ event_id }}; // Aqui você deve substituir pelo ID real do evento
-    
-        // Associar o evento de clique do botão à função deleteEvent
-        const deleteButton = document.getElementById('delete-button');
-        deleteButton.addEventListener('click', () => {
-          deleteEvent(eventId);
-        });
-      </script>
+      })
+      .catch(error => {
+        // Ocorreu um erro de conexão ou requisição
+        alert('Erro de conexão. Por favor, verifique sua conexão de internet.');
+      });
+  }
+
+  // Obter o ID do evento a ser deletado
+  const eventId = {{ event_id }}; // Aqui você deve substituir pelo ID real do evento
+
+  // Associar o evento de clique do botão à função deleteEvent
+  const deleteButton = document.getElementById('delete-button');
+  deleteButton.addEventListener('click', () => {
+    deleteEvent(eventId);
+  });
+</script>
 
 {% endblock %}

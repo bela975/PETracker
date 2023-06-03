@@ -1,8 +1,8 @@
-
 <!DOCTYPE html>
 
 {% load static %}
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,27 +11,31 @@
     <link rel="stylesheet" href="{% static '/st.css' %}">
     <link rel="stylesheet" href="{% static '/login.css' %}">
 
-    
+
     <title>PETtracker</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
 
 
     <div class="navbar">
         <a class="activate" href="/home_pet/"><i class="fa fa-fw fa-arrow-left"></i> Back</a>
-        <a href=" {% url 'recipes:login'%} " name="login" ><i class="fa fa-fw fa-user"></i> Login</a>
+        <a href=" {% url 'recipes:login'%} " name="login"><i class="fa fa-fw fa-user"></i> Login</a>
     </div>
 
     <h1>Medicine Diary</h1>
 
 
-     <div class="container-1">
-        {% block space %}            {% endblock %}
-         <h2>Register a Medicine You Already Gave:</h2>
+    <div class="container-1">
+        {% block space %} {% endblock %}
+        <h2>Register a Medicine You Already Gave:</h2>
 
         <form method="post">
             <table>
@@ -42,7 +46,7 @@
         </form>
     </div>
 
- {% block diary_categories %}
+    {% block diary_categories %}
 
     <div class="container text-center">
         <div class="row">
@@ -61,8 +65,9 @@
 
     {% for medicine in medicines %}
     <div class="container text-center">
-        <div class="row" >
-            <div class="col" ><a href="{% url 'recipes:medicine_detail' medicine.id %} " name="med">{{ medicine.med }}</a></div>
+        <div class="row">
+            <div class="col"><a href="{% url 'recipes:medicine_detail' medicine.id %} " name="med">{{ medicine.med }}
+                </a></div>
             <div class="col" name="time">
                 {{ medicine.time }}
             </div>
@@ -85,7 +90,7 @@
 
     <div class="container-alergies">
 
-        {% block space2 %}            {% endblock %}
+        {% block space2 %} {% endblock %}
         <h2>Register Your Pet's Current Treatment:</h2>
 
         <form method="post">
@@ -119,7 +124,8 @@
 
     <div class="container text-center">
         <div class="row">
-            <div class="col"><a href="{% url 'recipes:todo_detail' todo.id %}" name = "medicine" >{{ todo.medicine }}</a></div>
+            <div class="col"><a href="{% url 'recipes:todo_detail' todo.id %}" name="medicine">{{ todo.medicine }}</a>
+            </div>
             <div class="col" name="Details">
                 {{ todo.details }}
             </div>
@@ -130,8 +136,9 @@
     </div>
     {% endfor %}
 
-    
 
-    
+
+
 </body>
+
 </html>
