@@ -28,6 +28,7 @@
     </div>
 
 
+    
     {% block content %}
 
     <h1>Food</h1>
@@ -73,12 +74,14 @@
                 {{ form }}
             </table>
             {% csrf_token %}
+            <br>
             <button type="submit">Create</button>
         </form>
 
         {% endblock %}
 
     </div>
+
 
 </body>
 

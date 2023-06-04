@@ -26,7 +26,7 @@
 
 
     <div class="navbar">
-        <a class="activate" href="/home_pet/"><i class="fa fa-fw fa-arrow-left"></i> Back</a>
+        <a id="back_button" class="activate" href="/home_pet/"><i class="fa fa-fw fa-arrow-left"></i> Back</a>
         <a href=" {% url 'recipes:login'%} " name="login"><i class="fa fa-fw fa-user"></i> Login</a>
     </div>
 
@@ -66,7 +66,7 @@
     {% for medicine in medicines %}
     <div class="container text-center">
         <div class="row">
-            <div class="col"><a href="{% url 'recipes:medicine_detail' medicine.id %} " name="med">{{ medicine.med }}
+            <div class="col"><a id="med_det" href="{% url 'recipes:medicine_detail' medicine.id %} " name="med">{{ medicine.med }}
                 </a></div>
             <div class="col" name="time">
                 {{ medicine.time }}
@@ -104,41 +104,39 @@
 
     {% block plan_categories %}
 
-    <div class="container text-center">
-        <div class="row">
-            <div class="col">
-                Medicine:
-            </div>
-            <div class="col">
-                Details:
-            </div>
-            <div class="col">
-                Times per day:
-            </div>
-        </div>
-    </div>
-    {% endblock %}
+    <br>
 
+    <div class="container">
 
     {% for todo in todos %}
 
-    <div class="container text-center">
-        <div class="row">
-            <div class="col"><a id="mpd" href="{% url 'recipes:todo_detail' todo.id %}" name="medicine">{{ todo.medicine }}</a>
+    <div class="accordion" id="plan-accordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button id="plan-button" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accordionCollapse{{ todo.id }}" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+              Plan {{ todo.medicine }}
+            </button>
+          </h2>
+          <div id="accordionCollapse{{ todo.id }}" class="accordion-collapse collapse">
+            <div class="accordion-body">
+            <strong>Details:</strong> {{ todo.details }}
+                <br>
+                <br>
+                <strong>Times Per Day:</strong> {{ todo.time_per_day }}
             </div>
-            <div class="col" name="Details">
-                {{ todo.details }}
-            </div>
-            <div class="col" name="Times per day">
-                {{ todo.time_per_day }}
-            </div>
+            <br>
+            <a id="del-med-plan" href="{% url 'recipes:delete_todo' todo.id %}" class="btn btn-danger btn-small"> Delete Medicine Plan</a>
+            
+        </div>
         </div>
     </div>
+
     {% endfor %}
-
-
-
-
-</body>
-
-</html>
+    {% endblock %}
+    <br>
+    <br>
+    
+      
+    </body>
+    
+    </html>

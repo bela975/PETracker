@@ -21,6 +21,7 @@ class petracker_tests(TestCase):
         self.run_tests(driver)
     
     def register(self, driver):
+        time.sleep(1)
         register = driver.find_element(By.NAME, "sign-up")
         register.click()
         register_username = driver.find_element(By.NAME, "username")
@@ -60,6 +61,8 @@ class petracker_tests(TestCase):
         register_pet_email.send_keys("spiderman@gmail.com")
         driver.find_element(By.NAME, "photo").send_keys("C:/Users/virna/OneDrive/Área de Trabalho/FDS_PETracker(3.0)/PETracker/files/spider_pig.jpg") #ver dps como alterar isso por causa do actions
         register_pet_button_create = driver.find_element(By.NAME, "create")
+        time.sleep(2)
+        
         register_pet_button_create.click()
         
     def acessing_home(self, driver):
@@ -190,22 +193,65 @@ class petracker_tests(TestCase):
         plan_medicine = driver.find_element(By.ID, "id_medicine")
         plan_medicine.send_keys("Zolmitriptan")
         plan_details = driver.find_element(By.ID, "id_details")
-        plan_details.send_keys("After defeating Thanos, Peter got sick. Since Porker is alergic to Tylenol, he'll take Zolmitriptan's pills for 3 days instead")
+        plan_details.send_keys("After defeating Thanos, Peter got sick. Since Porker is alergic to Tylenol, he'll take Zolmitriptan's pills for a day instead")
         plan_times_per_day = driver.find_element(By.ID, "id_time_per_day")
         plan_times_per_day.send_keys("1")
+        time.sleep(1)
+        driver.execute_script("window.scrollTo(0,100)")
         time.sleep(1)
         plan_add_button = driver.find_element(By.ID, "add-plan")
         plan_add_button.click()
         time.sleep(1)
-        driver.find_element(By.ID, "mpd").click()
-        time.sleep(1)
-        driver.find_element(By.ID, "back_button").click()
+        driver.execute_script("window.scrollTo(0,500)")
+        time.sleep(2) #precisa
+        plan_accordion = driver.find_element(By.ID, "plan-button")
+        plan_accordion.click()
+        time.sleep(2)
+        driver.execute_script("window.scrollTo(0,800)")
+        time.sleep(1) #precisa
+        plan_accordion.click()
         time.sleep(3)
-        driver.find_element(By.ID, "mpd").click()
+        driver.execute_script("window.scrollTo(0,0)")
+        time.sleep(1) #precisa
+        
+        medicine_diary_med = driver.find_element(By.ID, "id_med")
+        medicine_diary_med.send_keys("Zolmitriptan")
+        medicine_diary_resp = driver.find_element(By.ID, "id_resp")
+        medicine_diary_resp.send_keys("Miles")
+        medicine_diary_time = driver.find_element(By.ID, "id_time")
+        medicine_diary_time.send_keys("13062023", Keys.TAB, "2200")
+        time.sleep(2)
+        medicine_diary_add_button = driver.find_element(By.ID, "add-medicine-diary")
+        medicine_diary_add_button.click()
         time.sleep(1)
-        delete_med_plan = driver.find_element(By.ID, "del-med-plan")
-        delete_med_plan.click()
-        time.sleep(1)
+        med_info = driver.find_element(By.ID, "med_det")
+        med_info.click()
+        time.sleep(2)
+        med_delete = driver.find_element(By.ID, "del-med")
+        med_delete.click()
+        time.sleep(2)
+
+        driver.execute_script("window.scrollTo(0,800)")
+        time.sleep(3)
+        plan_accordion = driver.find_element(By.ID, "plan-button")
+        plan_accordion.click()
+        time.sleep(3)
+        driver.execute_script("window.scrollTo(0,800)")
+        time.sleep(3)
+        delete_plan_accordion = driver.find_element(By.ID, "del-med-plan")
+        delete_plan_accordion.click()
+        time.sleep(3)
+        driver.execute_script("window.scrollTo(0,0)")
+        time.sleep(3)
+
+        back_button = driver.find_element(By.ID, "back_button")
+        back_button.click()
+        time.sleep(2)
+        
+    def logout(self, driver):
+        logout_button = driver.find_element(By.ID, "Logout")
+        logout_button.click()
+        time.sleep(2)
 
         driver.quit()
 
@@ -221,6 +267,9 @@ class petracker_tests(TestCase):
         self.calendar(driver)
         self.checklist(driver)
         self.medicine(driver)
+        #teste food
+        self.logout(driver)
+
 # register
 # login
 # create pet
