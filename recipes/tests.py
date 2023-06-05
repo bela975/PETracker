@@ -1,4 +1,4 @@
-from django.test import TestCase
+from django.test import LiveServerTestCase
 from .selPath import SELENIUM_DIRS
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -10,12 +10,12 @@ import time
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--no-sandbox")
-# chrome_options.add_argument("--headless") #sera usado no actions
+chrome_options.add_argument("--headless") #sera usado no actions
 chrome_options.add_argument("--disable-gpu")
 driver = webdriver.Chrome(options=chrome_options)
 driver.maximize_window()
 
-class petracker_tests(TestCase):
+class petracker_tests(LiveServerTestCase):
     def test(self):
         driver.get("http://127.0.0.1:8000/")
         self.run_tests(driver)
@@ -23,7 +23,7 @@ class petracker_tests(TestCase):
     def register(self, driver):
         time.sleep(1)
         register = driver.find_element(By.NAME, "sign-up")
-        register.click()
+        driver.execute_script("arguments[0].click();", register)
         register_username = driver.find_element(By.NAME, "username")
         register_username.send_keys("miles morales")
         register_email = driver.find_element(By.NAME, "email")
@@ -32,9 +32,11 @@ class petracker_tests(TestCase):
         register_password.send_keys("gwen&miles")
         register_button = driver.find_element(By.NAME, "register")
         time.sleep(1)
-        register_button.click()
+        driver.execute_script("arguments[0].click();", register_button)
 
     def login(self, driver):
+        driver.get("http://127.0.0.1:8000/")
+        time.sleep(2)
         login_username = driver.find_element(By.NAME, "username")
         login_username.send_keys("miles morales")
         login_password = driver.find_element(By.NAME, "password")
@@ -66,8 +68,9 @@ class petracker_tests(TestCase):
         register_pet_button_create.click()
         
     def acessing_home(self, driver):
-        pet_profile_button = driver.find_element(By.NAME, "pet_profile")
-        pet_profile_button.click()
+        time.sleep(1)
+        pet_profile_button = driver.find_element(By.ID, "pet_profile")
+        driver.execute_script("arguments[0].click();", pet_profile_button)
         time.sleep(1)
 
     def alergy(self, driver):
@@ -128,7 +131,7 @@ class petracker_tests(TestCase):
         event_end_time.send_keys(Keys.TAB)
         event_end_time.send_keys("2007")
         event_color_select = driver.find_element(By.ID, "id_colorSelected")
-        event_color_select.send_keys("purple")
+        event_color_select.send_keys("orange")
         event_save_button = driver.find_element(By.ID, "save-event")
         time.sleep(1)
         event_save_button.click()
@@ -200,7 +203,7 @@ class petracker_tests(TestCase):
         driver.execute_script("window.scrollTo(0,100)")
         time.sleep(1)
         plan_add_button = driver.find_element(By.ID, "add-plan")
-        plan_add_button.click()
+        driver.execute_script("arguments[0].click();", plan_add_button)
         time.sleep(1)
         driver.execute_script("window.scrollTo(0,500)")
         time.sleep(2) #precisa
