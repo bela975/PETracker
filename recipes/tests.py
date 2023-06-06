@@ -274,7 +274,7 @@ class petracker_tests(LiveServerTestCase):
         self.acessing_home(driver)
         self.alergy(driver)
         self.background_color(driver)
-        # self.calendar(driver)
+        self.calendar(driver)
         self.checklist(driver)
         self.medicine(driver)
         #teste food
