@@ -1,5 +1,4 @@
 from django.test import LiveServerTestCase
-from .selPath import SELENIUM_DIRS
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
