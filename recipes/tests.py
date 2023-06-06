@@ -136,7 +136,7 @@ class petracker_tests(LiveServerTestCase):
         time.sleep(1)
         #falta terminar esse, mas n faço ideia de como
         back_button = driver.find_element(By.ID, "back_button")
-driver.execute_script("arguments[0].click();", back_button)
+        driver.execute_script("arguments[0].click();", back_button)
         time.sleep(1)
 
     def checklist(self, driver):
