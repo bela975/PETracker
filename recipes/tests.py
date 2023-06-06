@@ -3,6 +3,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 import time
 
 
@@ -137,7 +139,7 @@ class petracker_tests(LiveServerTestCase):
         #falta terminar esse, mas n faço ideia de como
         driver.execute_script("window.scrollTo(0,0)")
         time.sleep(2) #precisa
-        back_button = driver.find_element(By.LINK_TEXT, " Back")
+        back_button = driver.find_element(By.NAME, "back_button")
         driver.execute_script("arguments[0].click();", back_button)
         time.sleep(1)
 
