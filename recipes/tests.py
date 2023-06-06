@@ -137,7 +137,7 @@ class petracker_tests(LiveServerTestCase):
         #falta terminar esse, mas n faço ideia de como
         driver.execute_script("window.scrollTo(0,0)")
         time.sleep(2) #precisa
-        back_button = driver.find_element(By.ID, "back_button")
+        back_button = driver.find_element(By.LINK_TEXT, " Back")
         driver.execute_script("arguments[0].click();", back_button)
         time.sleep(1)
 
