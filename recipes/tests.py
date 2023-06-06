@@ -11,7 +11,7 @@ chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--headless") #sera usado no actions
 chrome_options.add_argument("--disable-gpu")
 driver = webdriver.Chrome(options=chrome_options)
-driver.maximize_window()
+# driver.maximize_window()
 
 class petracker_tests(LiveServerTestCase):
     def test(self):
