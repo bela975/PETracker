@@ -3,17 +3,19 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import time
-
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--headless") #sera usado no actions
 chrome_options.add_argument("--disable-gpu")
 driver = webdriver.Chrome(options=chrome_options)
-# driver.maximize_window()
+driver.maximize_window()
+
+global wait
+wait = WebDriverWait(driver, 10)
 
 class petracker_tests(LiveServerTestCase):
     def test(self):
@@ -139,7 +141,7 @@ class petracker_tests(LiveServerTestCase):
         #falta terminar esse, mas n faço ideia de como
         driver.execute_script("window.scrollTo(0,0)")
         time.sleep(2) #precisa
-        back_button = driver.find_element(By.NAME, "back_button")
+        back_button = wait.until(EC.element_to_be_clickable((By.NAME, "back_button")))
         driver.execute_script("arguments[0].click();", back_button)
         time.sleep(1)
 
