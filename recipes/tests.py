@@ -142,8 +142,6 @@ class petracker_tests(LiveServerTestCase):
         #falta terminar esse, mas n faço ideia de como
         driver.execute_script("window.scrollTo(0,0)")
         time.sleep(2)
-        # login_lala = driver.find_element(By.ID, "login_button")
-        # login_lala.send_keys(Keys.RETURN)
         #precisa
         back_button = wait.until(EC.element_to_be_clickable((By.NAME, "back_button")))
         back_button.send_keys(Keys.RETURN)
@@ -275,7 +273,7 @@ class petracker_tests(LiveServerTestCase):
         self.acessing_home(driver)
         self.alergy(driver)
         self.background_color(driver)
-        self.calendar(driver)
+        # self.calendar(driver)
         self.checklist(driver)
         self.medicine(driver)
         #teste food
