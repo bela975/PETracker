@@ -136,7 +136,7 @@ class petracker_tests(LiveServerTestCase):
         event_color_select.send_keys("orange")
         event_save_button = driver.find_element(By.ID, "save-event")
         time.sleep(2)
-        event_save_button.click()
+        event_save_button.send_keys(Keys.RETURN)
         time.sleep(1)
         print(f"==========={driver.current_url}")
         #falta terminar esse, mas n faço ideia de como
