@@ -120,7 +120,6 @@ class petracker_tests(LiveServerTestCase):
         calendar_nav_button.click()
         new_event_button = driver.find_element(By.NAME, "button_new_event")
         new_event_button.click()
-        time.sleep(2)
         event_title = driver.find_element(By.ID, "id_title")
         event_title.send_keys("Walk to The Park With Peter Porker")
         event_description = driver.find_element(By.ID, "id_description")
@@ -259,6 +258,30 @@ class petracker_tests(LiveServerTestCase):
         back_button.click()
         time.sleep(2)
         
+    def food(self, driver):
+        time.sleep(2)
+        food_nav_button = driver.find_element(By.ID, "food")
+        food_nav_button.click()
+        food_name = driver.find_element(By.ID, "id_food")
+        food_name.send_keys("Ração")
+        food_resp = driver.find_element(By.ID, "id_resp")
+        food_resp.send_keys("Miles")
+        food_time = driver.find_element(By.ID, "id_time")
+        food_time.send_keys("13062023", Keys.TAB, "2200")
+        time.sleep(2)
+        food_add_button = driver.find_element(By.ID, "add_food")
+        food_add_button.click()
+        time.sleep(1)
+        food_info = driver.find_element(By.ID, "food_del")
+        food_info.click()
+        time.sleep(2)
+        med_delete = driver.find_element(By.ID, "del-food")
+        med_delete.click()
+        time.sleep(2)
+        back_button = driver.find_element(By.ID, "back_button")
+        back_button.click()
+        time.sleep(2)
+    
     def logout(self, driver):
         logout_button = driver.find_element(By.ID, "Logout")
         logout_button.click()
@@ -278,7 +301,7 @@ class petracker_tests(LiveServerTestCase):
         self.calendar(driver)
         self.checklist(driver)
         self.medicine(driver)
-        #teste food
+        self.food(driver)
         self.logout(driver)
 
 # register
