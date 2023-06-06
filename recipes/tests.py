@@ -9,7 +9,7 @@ import time
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--no-sandbox")
-chrome_options.add_argument("--headless") #sera usado no actions
+# chrome_options.add_argument("--headless") #sera usado no actions
 chrome_options.add_argument("--disable-gpu")
 driver = webdriver.Chrome(options=chrome_options)
 driver.maximize_window()
@@ -138,6 +138,7 @@ class petracker_tests(LiveServerTestCase):
         time.sleep(2)
         event_save_button.click()
         time.sleep(1)
+        print(f"==========={driver.current_url}")
         #falta terminar esse, mas n faço ideia de como
         driver.execute_script("window.scrollTo(0,0)")
         time.sleep(2)
