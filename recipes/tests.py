@@ -120,6 +120,7 @@ class petracker_tests(LiveServerTestCase):
         calendar_nav_button.click()
         new_event_button = driver.find_element(By.NAME, "button_new_event")
         new_event_button.click()
+        time.sleep(2)
         event_title = driver.find_element(By.ID, "id_title")
         event_title.send_keys("Walk to The Park With Peter Porker")
         event_description = driver.find_element(By.ID, "id_description")
