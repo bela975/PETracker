@@ -140,9 +140,12 @@ class petracker_tests(LiveServerTestCase):
         time.sleep(1)
         #falta terminar esse, mas n faço ideia de como
         driver.execute_script("window.scrollTo(0,0)")
-        time.sleep(2) #precisa
+        time.sleep(2)
+        # login_lala = driver.find_element(By.ID, "login_button")
+        # login_lala.send_keys(Keys.RETURN)
+        #precisa
         back_button = wait.until(EC.element_to_be_clickable((By.NAME, "back_button")))
-        driver.execute_script("arguments[0].click();", back_button)
+        back_button.send_keys(Keys.RETURN)
         time.sleep(1)
 
     def checklist(self, driver):
