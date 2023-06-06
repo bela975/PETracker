@@ -131,14 +131,14 @@ class petracker_tests(LiveServerTestCase):
         event_color_select = driver.find_element(By.ID, "id_colorSelected")
         event_color_select.send_keys("orange")
         event_save_button = driver.find_element(By.ID, "save-event")
-        time.sleep(1)
+        time.sleep(2)
         event_save_button.click()
         time.sleep(1)
         #falta terminar esse, mas n faço ideia de como
         driver.execute_script("window.scrollTo(0,0)")
         time.sleep(2) #precisa
-        back_button = driver.find_element(By.ID, "back_button")
-        driver.execute_script("arguments[0].click();", back_button)
+        back_ = driver.find_element(By.ID, "back_button")
+        driver.execute_script("arguments[0].click();", back_)
         time.sleep(1)
 
     def checklist(self, driver):
