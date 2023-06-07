@@ -6,7 +6,7 @@ Event
 
 {% block content %}
 <div class="clearfix">
-  <a class="btn btn-info left" href="{% url 'recipes:calendar' %}"> Calendar </a>
+  <a class="btn btn-info left" id="cal_button" href="{% url 'recipes:calendar' %}"> Calendar </a>
 </div>
 
 {% if form.errors %}
@@ -29,23 +29,24 @@ Event
   {% csrf_token %}
   <table class="form form-table">
     {{ form }}
-    <a button class="btn btn-info left" style="position:absolut; left:20px; background-color: white"> Possible tags:
-    </a>
+    <a button class="btn btn-info left" style="position:absolut; left:20px; background-color: white"> Possible tags: </a>
     <a button class="btn btn-info left" style="position:absolut; left:145px; background-color: #978DCC"> Walks </a>
     <a button class="btn btn-info left" style="position:absolut; left:210px; background-color: #FAA42B"> Meet Ups </a>
     <a button class="btn btn-info left" style="position:absolut; left:295px; background-color: #4FD881"> Vet </a>
     <a button class="btn btn-info left" style="position:absolut; left:340px; background-color: #00B7D9"> Others </a>
 
-    <tr>
-      <button id="save-event" type="submit" class="btn btn-info right"> Submit </button></td>
-    </tr>
-
+    <!-- <tr>
+      <td colspan="2"><button id="save-event" type="submit" class="btn btn-info right"> Submit </button></td>
+    </tr> -->
 
 
     {% comment %} <a href="{% url 'recipes:event_delete' event.id %}" class="btn btn-danger btn-small">Delete</a> {%endcomment %}
 
 
 </form>
+
+  <td colspan="2"><button id="save-event" type="submit" class="btn btn-info right"> Submit </button></td>
+
 
 <form id="delete-form">
 </form>

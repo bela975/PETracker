@@ -148,7 +148,6 @@ class petracker_tests(LiveServerTestCase):
         time.sleep(1)
 
     def checklist(self, driver):
-        # driver.get("http://127.0.0.1:8000/home_pet/")
         checklist_nav_button = driver.find_element(By.ID, "kanban") 
         checklist_nav_button.click()
         new_task = driver.find_element(By.ID, "task")
