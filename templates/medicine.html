@@ -53,29 +53,17 @@
             <div class="col">
                 Medicine:
             </div>
-            <div class="col">
-                Time:
-            </div>
-            <div class="col">
-                Responsible:
-            </div>
         </div>
     </div>
+    
+    
     {% endblock %}
-
+    
     {% for medicine in medicines %}
-    <div class="container text-center">
-        <div class="row">
-            <div class="col"><a id="med_det" href="{% url 'recipes:medicine_detail' medicine.id %} " name="med">{{ medicine.med }}
-                </a></div>
-            <div class="col" name="time">
-                {{ medicine.time }}
-            </div>
-            <div class="col" name="resp">
-                {{ medicine.resp }}
-            </div>
-        </div>
+    <div class="list-group align container">
+        <a href="{% url 'recipes:medicine_detail' medicine.id %}" id="med_det" class="list-group-item list-group-item-action"> {{ medicine.med }}</a>
     </div>
+
     {% endfor %}
 
 

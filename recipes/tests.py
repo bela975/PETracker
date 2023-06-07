@@ -235,8 +235,8 @@ class petracker_tests(LiveServerTestCase):
         medicine_diary_add_button = driver.find_element(By.ID, "add-medicine-diary")
         medicine_diary_add_button.click()
         time.sleep(1)
-        wait.until(EC.element_to_be_clickable((By.ID, "med_det"))).click()
-        # med_info.send_keys(Keys.RETURN)
+        med_info =  wait.until(EC.element_to_be_clickable((By.ID, "med_det")))
+        driver.execute_script("arguments[0].click();", med_info)
 
         time.sleep(2)
         med_delete = driver.find_element(By.ID, "del-med")
