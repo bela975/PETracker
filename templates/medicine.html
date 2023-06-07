@@ -57,7 +57,7 @@
     
     {% for medicine in medicines %}
     <div class="list-group align container">
-        <a href="{% url 'recipes:medicine_detail' medicine.id %}" id="med_det" class="list-group-item list-group-item-action"> {{ medicine.med }}</a>
+        <a href="{% url 'recipes:medicine_detail' medicine.id %}" id="med-det" class="list-group-item list-group-item-action"> {{ medicine.med }}</a>
     </div>
 
     {% endfor %}
