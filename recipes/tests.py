@@ -296,16 +296,16 @@ class petracker_tests(LiveServerTestCase):
         #shift + tab volta a linha
 
     def run_tests(self, driver):
-        # self.register(driver)
+        self.register(driver)
         self.login(driver)
-        # self.register_pet(driver)
+        self.register_pet(driver)
         self.acessing_home(driver)
-        # self.alergy(driver)
-        # self.background_color(driver)
-        # self.calendar(driver)
-        # self.checklist(driver)
+        self.alergy(driver)
+        self.background_color(driver)
+        self.calendar(driver)
+        self.checklist(driver)
         self.medicine(driver)
-        # self.food(driver)
+        self.food(driver)
         self.logout(driver)
 
 # register
