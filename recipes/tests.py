@@ -134,17 +134,17 @@ class petracker_tests(LiveServerTestCase):
         event_end_time.send_keys("2007")
         event_color_select = driver.find_element(By.ID, "id_colorSelected")
         event_color_select.send_keys("orange")
+        time.sleep(3)
         event_save_button = driver.find_element(By.ID, "save-event")
-        time.sleep(2)
         event_save_button.send_keys(Keys.RETURN)
         time.sleep(1)
         print(f"==========={driver.current_url}")
         #falta terminar esse, mas n faço ideia de como
         driver.execute_script("window.scrollTo(0,0)")
         time.sleep(2)
-        # precisa
-        cal_b = driver.find_element(By.ID, "cal_button")
-        cal_b.send_keys(Keys.RETURN)
+        # # precisa
+        # cal_b = driver.find_element(By.ID, "cal_button")
+        # cal_b.send_keys(Keys.RETURN)
         back_button = driver.find_element(By.ID, "back_button")
         back_button.send_keys(Keys.RETURN)
         time.sleep(1)
