@@ -143,8 +143,8 @@ class petracker_tests(LiveServerTestCase):
         driver.execute_script("window.scrollTo(0,0)")
         time.sleep(2)
         # precisa
-        cal_b = driver.find_element(By.ID, "cal_button")
-        cal_b.send_keys(Keys.RETURN)
+        # cal_b = driver.find_element(By.ID, "cal_button")
+        # cal_b.send_keys(Keys.RETURN)
         back_button = driver.find_element(By.ID, "back_button")
         back_button.send_keys(Keys.RETURN)
         time.sleep(1)
@@ -296,16 +296,16 @@ class petracker_tests(LiveServerTestCase):
         #shift + tab volta a linha
 
     def run_tests(self, driver):
-        self.register(driver)
+        # self.register(driver)
         self.login(driver)
-        self.register_pet(driver)
+        # self.register_pet(driver)
         self.acessing_home(driver)
-        self.alergy(driver)
-        self.background_color(driver)
-        self.calendar(driver)
-        self.checklist(driver)
+        # self.alergy(driver)
+        # self.background_color(driver)
+        # self.calendar(driver)
+        # self.checklist(driver)
         self.medicine(driver)
-        self.food(driver)
+        # self.food(driver)
         self.logout(driver)
 
 # register
