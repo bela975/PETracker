@@ -236,7 +236,7 @@ class petracker_tests(LiveServerTestCase):
         medicine_diary_add_button.click()
         time.sleep(1)
         # med_info = driver.find_element(By.ID, "med_det")
-        med_info = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".list-group-item.list-group-item-action#med_det")))
+        med_info = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "med_det")))
         med_info.click()
         # driver.execute_script("arguments[0].click();", med_info)
 
