@@ -140,14 +140,15 @@ class petracker_tests(LiveServerTestCase):
         time.sleep(1)
         print(f"==========={driver.current_url}")
         #falta terminar esse, mas n faço ideia de como
-        driver.execute_script("window.scrollTo(0,0)")
-        time.sleep(2)
+        # driver.execute_script("window.scrollTo(0,0)")
+        # time.sleep(2)
         #precisa
-        back_button = wait.until(EC.element_to_be_clickable((By.NAME, "back_button")))
-        back_button.send_keys(Keys.RETURN)
+        # back_button = wait.until(EC.element_to_be_clickable((By.NAME, "back_button")))
+        # back_button.send_keys(Keys.RETURN)
         time.sleep(1)
 
     def checklist(self, driver):
+        driver.get("http://127.0.0.1:8000/home_pet/")
         checklist_nav_button = driver.find_element(By.ID, "kanban") 
         checklist_nav_button.click()
         new_task = driver.find_element(By.ID, "task")
@@ -309,4 +310,3 @@ class petracker_tests(LiveServerTestCase):
 # create pet
 # select pet
 # pet_home
-#
