@@ -140,11 +140,11 @@ class petracker_tests(LiveServerTestCase):
         time.sleep(1)
         print(f"==========={driver.current_url}")
         #falta terminar esse, mas n faço ideia de como
-        # driver.execute_script("window.scrollTo(0,0)")
-        # time.sleep(2)
-        #precisa
-        # back_button = wait.until(EC.element_to_be_clickable((By.NAME, "back_button")))
-        # back_button.send_keys(Keys.RETURN)
+        driver.execute_script("window.scrollTo(0,0)")
+        time.sleep(2)
+        # precisa
+        back_button = driver.find_element(By.ID, "back_button")
+        back_button.send_keys(Keys.RETURN)
         time.sleep(1)
 
     def checklist(self, driver):
