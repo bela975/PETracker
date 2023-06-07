@@ -143,8 +143,8 @@ class petracker_tests(LiveServerTestCase):
         driver.execute_script("window.scrollTo(0,0)")
         time.sleep(2)
         # precisa
-        cal_b = driver.find_element(By.ID, "cal_button")
-        cal_b.send_keys(Keys.RETURN)
+        # cal_b = driver.find_element(By.ID, "cal_button")
+        # cal_b.send_keys(Keys.RETURN)
         back_button = driver.find_element(By.ID, "back_button")
         back_button.send_keys(Keys.RETURN)
         time.sleep(1)
@@ -235,7 +235,8 @@ class petracker_tests(LiveServerTestCase):
         medicine_diary_add_button = driver.find_element(By.ID, "add-medicine-diary")
         medicine_diary_add_button.click()
         time.sleep(1)
-        med_info = driver.find_element(By.ID, "med_det")
+        # med_info = driver.find_element(By.ID, "med_det")
+        med_info = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "med_det")))
         med_info.click()
         # driver.execute_script("arguments[0].click();", med_info)
 
