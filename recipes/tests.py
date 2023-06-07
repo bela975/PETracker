@@ -138,7 +138,7 @@ class petracker_tests(LiveServerTestCase):
         event_save_button = driver.find_element(By.ID, "save-event")
         event_save_button.send_keys(Keys.RETURN)
         time.sleep(1)
-        print(f"==========={driver.current_url}")
+        print(f"==========={driver.current_url}") #
         #falta terminar esse, mas n faço ideia de como
         driver.execute_script("window.scrollTo(0,0)")
         time.sleep(2)
@@ -235,9 +235,9 @@ class petracker_tests(LiveServerTestCase):
         medicine_diary_add_button = driver.find_element(By.ID, "add-medicine-diary")
         medicine_diary_add_button.click()
         time.sleep(1)
-        med_info = driver.find_element(By.ID, "med_det")
+        med_info =  wait.until(EC.element_to_be_clickable((By.ID, "med_det")))
         driver.execute_script("arguments[0].click();", med_info)
-        # med_info.click()
+
         time.sleep(2)
         med_delete = driver.find_element(By.ID, "del-med")
         med_delete.click()
