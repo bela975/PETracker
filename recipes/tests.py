@@ -63,7 +63,7 @@ class petracker_tests(LiveServerTestCase):
         register_pet_phone.send_keys("12345678910")
         register_pet_email = driver.find_element(By.NAME, "email")
         register_pet_email.send_keys("spiderman@gmail.com")
-        # driver.find_element(By.NAME, "photo").send_keys("C:/Users/virna/OneDrive/Área de Trabalho/FDS_PETracker(3.0)/PETracker/files/spider_pig.jpg") #ver dps como alterar isso por causa do actions
+        driver.find_element(By.NAME, "photo").send_keys("files/spider_pig.jpg")
         register_pet_button_create = driver.find_element(By.NAME, "create")
         time.sleep(2)
         
