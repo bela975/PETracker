@@ -83,9 +83,9 @@ class Alergy(models.Model):
 
 class Food(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    food = models.CharField(max_length=50)
-    time = models.DateTimeField(max_length=50)
-    resp = models.CharField(max_length=50)
+    food = models.CharField(max_length=50, default="exemplo")
+    time = models.DateTimeField(max_length=50, default=timezone.now)
+    resp = models.CharField(max_length=50, default="exemplo")
     def str(self):
         return f"{self.food}"
 
