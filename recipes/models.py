@@ -44,11 +44,11 @@ class Pet(models.Model):
 
 class Event(models.Model):
 
-    title = models.CharField(max_length=200)
-    description = models.TextField()
-    start_time = models.DateTimeField()
-    end_time = models.DateTimeField()
-    colorSelected = models.CharField(max_length=10)
+    title = models.CharField(max_length=200, default = "title")
+    description = models.TextField(default = "description")
+    start_time = models.DateTimeField(default=timezone.now)
+    end_time = models.DateTimeField(default=timezone.now)
+    colorSelected = models.CharField(max_length=10, default="blue")
     
     @property
     def get_html_url(self):
