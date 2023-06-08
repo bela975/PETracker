@@ -113,7 +113,7 @@ class petracker_tests(LiveServerTestCase):
         Select(background_color_select).select_by_value('#4FD881')
         background_color_select_button = driver.find_element(By.NAME, "add_color")
         background_color_select_button.click()
-        time.sleep(1)
+        time.sleep(2)
 
     def calendar(self, driver):
         calendar_nav_button = driver.find_element(By.ID, "calendar")
@@ -138,8 +138,6 @@ class petracker_tests(LiveServerTestCase):
         event_save_button = driver.find_element(By.ID, "save-event")
         event_save_button.send_keys(Keys.RETURN)
         time.sleep(1)
-        print(f"==========={driver.current_url}") #
-        #falta terminar esse, mas n faço ideia de como
         driver.execute_script("window.scrollTo(0,0)")
         time.sleep(2)
         # precisa

@@ -1,7 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
-import datetime
+from django.utils import timezone
 
 class Pet(models.Model):
     
@@ -62,7 +62,7 @@ class Event(models.Model):
 class Medicine(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     med = models.CharField(max_length=50, default = "exemplo")
-    time = models.DateTimeField(max_length=50, default=datetime.datetime.now)
+    time = models.DateTimeField(max_length=50, default=timezone.now)
     resp = models.CharField(max_length=50, default = "exemplo")
     def str(self):
         return f"{self.med}"
