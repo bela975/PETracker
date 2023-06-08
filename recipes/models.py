@@ -62,9 +62,9 @@ class Event(models.Model):
 
 class Medicine(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    med = models.CharField(max_length=50)
-    time = models.DateTimeField(max_length=50)
-    resp = models.CharField(max_length=50)
+    med = models.CharField(max_length=50, default = "exemplo")
+    time = models.DateTimeField(max_length=50, )
+    resp = models.CharField(max_length=50, default = "exemplo")
     def str(self):
         return f"{self.med}"
     
