@@ -32,15 +32,7 @@ jobs:
     - uses: nanasess/setup-chromedriver@v2
     - run: |
         chromedriver --url-base=/wd/hub &
-    - name: Run Tests
-      run: |
-        python manage.py makemigrations
-        python manage.py migrate
-        
-        python manage.py runserver &
-        sleep 5
-        python manage.py test
-
+    
     - name: Clonar repositório
       run: git clone ${{ github.repository }} cloned-repo
 
@@ -49,3 +41,12 @@ jobs:
       with:
         name: Imagem de teste
         path: cloned-repo/files/spider_pig.jpg
+    
+    - name: Run Tests
+      run: |
+        python manage.py makemigrations
+        python manage.py migrate
+        
+        python manage.py runserver &
+        sleep 5
+        python manage.py test
