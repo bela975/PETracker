@@ -33,15 +33,6 @@ jobs:
     - run: |
         chromedriver --url-base=/wd/hub &
     
-    - name: Clonar repositório
-      run: git clone ${{ github.repository }} cloned-repo
-
-    - name: Enviar imagem como artefato
-      uses: actions/upload-artifact@v2
-      with:
-        name: Imagem de teste
-        path: cloned-repo/files/spider_pig.jpg
-    
     - name: Run Tests
       run: |
         python manage.py makemigrations
