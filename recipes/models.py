@@ -44,11 +44,11 @@ class Pet(models.Model):
 
 class Event(models.Model):
 
-    title = models.CharField(max_length=200, default = "title")
-    description = models.TextField(default = "description")
+    title = models.CharField(max_length=200)
+    description = models.TextField()
     start_time = models.DateTimeField(default=timezone.now)
     end_time = models.DateTimeField(default=timezone.now)
-    colorSelected = models.CharField(max_length=10, default="blue")
+    colorSelected = models.CharField(max_length=10)
     
     @property
     def get_html_url(self):
@@ -61,9 +61,9 @@ class Event(models.Model):
 
 class Medicine(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    med = models.CharField(max_length=50, default = "exemplo")
+    med = models.CharField(max_length=50)
     time = models.DateTimeField(max_length=50, default=timezone.now)
-    resp = models.CharField(max_length=50, default = "exemplo")
+    resp = models.CharField(max_length=50)
     def str(self):
         return f"{self.med}"
     
@@ -83,9 +83,9 @@ class Alergy(models.Model):
 
 class Food(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    food = models.CharField(max_length=50, default="exemplo")
+    food = models.CharField(max_length=50)
     time = models.DateTimeField(max_length=50, default=timezone.now)
-    resp = models.CharField(max_length=50, default="exemplo")
+    resp = models.CharField(max_length=50)
     def str(self):
         return f"{self.food}"
 
