@@ -63,7 +63,7 @@ class petracker_tests(LiveServerTestCase):
         register_pet_phone.send_keys("12345678910")
         register_pet_email = driver.find_element(By.NAME, "email")
         register_pet_email.send_keys("spiderman@gmail.com")
-        driver.find_element(By.NAME, "photo").send_keys("files/spider_pig.jpg")
+        driver.find_element(By.NAME, "photo").send_keys("spider_pig.jpg")
         register_pet_button_create = driver.find_element(By.NAME, "create")
         time.sleep(2)
         
