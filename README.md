@@ -76,6 +76,11 @@ Subfluxos:
 https://drive.google.com/file/d/1_qrBc1IZ9FREM3EiZv8RmmEEE0JkaCzq/view?usp=drivesdk
 
 
+## Experiência da Equipe - Programação em Pares | Group's Experience - Pair Programming
+
+<a href="https://docs.google.com/document/d/1pWCmzD89mb-wulBPBt-TiDKd3MmEOR7viZFkSn-rvZk/edit?usp=sharing"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Google_Docs_logo_%282014-2020%29.svg/1481px-Google_Docs_logo_%282014-2020%29.svg.png" alt="Docs" style="width:40px;height:57px;"></a>
+
+
 ## Roadmap
 Implementações Futuras:
 
