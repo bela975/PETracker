@@ -108,7 +108,6 @@ def pet_home(request):
                     "alergies": alergies,
                     "background_color_form": background_color_form,
                     "background_color": background_color,
-                    "pets": Pet.objects.all(),
                    })
 
 

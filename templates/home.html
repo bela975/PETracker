@@ -49,6 +49,8 @@
             <div class="card" style="width: 18rem;">
                 {% if pet.photo %}
                 <img src="{{ pet.photo.url }}" class="card-img-top" alt="...">
+                {% else %}
+                <img src="{% static "/images/images/petracker_logo.png" %}" class="card-img-top" alt="...">
                 {% endif %}
 
                 <div class="card-body">

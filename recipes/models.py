@@ -4,7 +4,8 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 
 class Pet(models.Model):
-    
+    # # user = models.ForeignKey(User, on_delete=models.CASCADE)
+    # user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     breed = models.CharField(max_length=100)
     age = models.PositiveIntegerField()
