@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-@x*=l_nxa$!^0qt@u4%ngr7y9*sthn=a3tv)5yk#^8tm_u1au-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'PETracker.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'utils.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
