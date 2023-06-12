@@ -70,10 +70,10 @@ https://grupofdsapp.atlassian.net/jira/software/projects/PET/boards/1/backlog
 Acesse nosso diagrama!
 
 Fluxo Principal:
-https://drive.google.com/file/d/1v7vV5ij_ElmjVCekBMpqOulCobckkFl8/view?usp=drivesdk
+https://drive.google.com/file/d/1UxolIPlflw8nZ3b_fxKIZ9MPPfOWyLT7/view
 
 Subfluxos:
-https://drive.google.com/file/d/1_qrBc1IZ9FREM3EiZv8RmmEEE0JkaCzq/view?usp=drivesdk
+https://drive.google.com/file/d/14D_mT3grHstv7h1ch6_8LwWXW7MmdWfl/view
 
 
 ## Experiência da Equipe - Programação em Pares | Group's Experience - Pair Programming
