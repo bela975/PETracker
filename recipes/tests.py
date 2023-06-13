@@ -19,7 +19,7 @@ wait = WebDriverWait(driver, 10)
 
 class petracker_tests(LiveServerTestCase):
     def test(self):
-        driver.get("http://127.0.0.1:8000/")
+        driver.get("http://ptv123-env.eba-gb4zztkd.sa-east-1.elasticbeanstalk.com/")
         self.run_tests(driver)
     
     def register(self, driver):
@@ -37,7 +37,7 @@ class petracker_tests(LiveServerTestCase):
         driver.execute_script("arguments[0].click();", register_button)
 
     def login(self, driver):
-        driver.get("http://127.0.0.1:8000/")
+        driver.get("http://ptv123-env.eba-gb4zztkd.sa-east-1.elasticbeanstalk.com/")
         time.sleep(2)
         login_username = driver.find_element(By.NAME, "username")
         login_username.send_keys("miles morales")
